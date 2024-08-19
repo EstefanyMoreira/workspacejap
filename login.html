@@ -8,6 +8,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/style-login.css" rel="stylesheet">
+    
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -18,19 +19,39 @@
 
 <body class="login-body">
   <main>
+    <nav>
+      <ul>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>  
+
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li> 
+
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <ul>
+    </nav>
+
     <div class="container login">
       <div class="left-section">
-        <h1>¡Hola de nuevo!</h1>
+        <h1>¡Hola <br>
+          de nuevo!</h1>
       </div>
       <div class="right-section">
         <div class="login-box">
           <h2>Login</h2>
           <p>Por favor, inicia sesión en tu cuenta y descubre los más asombrosos productos.</p>
-          <label for="usuario" class="form control">Nombre de usuario:<input type="text" id="usuario" class="form-control"></label><br>
-          <label for="constraseña" class="form control">Contraseña:<input type="password" id="contraseña" class="form-control"></label><br>
-            <div class="recordarusuario">
-          <input type="checkbox" id="recordarusuario" name="recordarusuario" value="yes">
-          <label for="recordarusuario">Recordar mi usuario</label>
+          <label class="form control">Nombre de usuario:<input type="text" id="usuario" class="form-control"></label><br>
+          <label class="form control">Contraseña:<input type="password" id="contraseña" class="form-control"></label><br>
+          <div class="recordarusuario">
+          
         </div>
           <button class="btn btn-success" id="inicio" type="submit">Iniciar sesión</button>
       </div>
