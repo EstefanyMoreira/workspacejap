@@ -1,0 +1,19 @@
+#products-container{
+    padding-top: 100px;
+    align-items: center;
+
+}
+
+.product-item{
+    color:black;
+    font-family: Verdana, sans-serif;
+}
+
+img{
+    height: 250px;
+    width: auto;
+    float: left;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+}
