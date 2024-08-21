@@ -20,10 +20,10 @@ let productsArray = [];
                     <br>
                     <br> 
                     <p> Precio </p>
-                    <p> USD ` + product.cost + `</p>
+                    <p id="precio"> USD ` + product.cost + `</p>
                 </div>
                 <div>
-                    <small>` + product.soldCount + ` vendidos </small> 
+                    <small id="vendido">` + product.soldCount + ` vendidos </small> 
                 </div>
             </div>
             <hr>
