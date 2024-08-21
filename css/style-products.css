@@ -1,46 +1,74 @@
 #products-container{
-    padding-top: 100px;
+    padding-top: 20px;
     align-items: center;
 }
 
 .product-item{
    color: black ;
    margin: auto;
+   margin-bottom: 3%;
+   margin-top: 3%;
+   cursor: pointer;
+   padding: 5%;
+   padding-left: 0;
 }
 
 img{
-    height: 290px;
-
-}
-
-.product-item{
-    color:black;
-}
-
-img{
-    height: 250px;
+    height: 310px;
     width: auto;
     float: left;
-    padding-left: 50px;
+    padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 50px;
 }
 
 h4{
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 700; 
     color:#2E314C;
+    margin-bottom: 2%;
 }
 
-p{
-    font-size: 20px; 
+p, small{
+    font-size: 23px;
+    font-weight: 400;
+    margin-right: 10%;
+    margin-bottom: 0;
+    color: #2E314C;
 }
+
 #precio{
-    font-size: 25px;
+    font-size: 40px;
     font-weight: 700; 
     color:#2E314C;
+    margin-right: 0;
 }
-#vendido{
+
+small{
+    float: inline-end;
+    margin-right: 0;
+    margin-top: 2%;
+}
+
+#products-container hr{
+    height: 2px;
+    width: 50%;
+    background-color: #2E314C;
+    color: #2E314C;
+    border-color: #2E314C;
+    opacity: 1;
+    margin-left: 35%;
+}
+
+.description {
+    color: black;
     font-size: 20px;
-    margin-left: 90%;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+.product-item:hover{
+    background-color: gainsboro;
 }
