@@ -1,0 +1,37 @@
+#products-container{
+    padding-top: 100px;
+    align-items: center;
+}
+
+.product-item{
+   color: black ;
+   margin: auto;
+}
+
+img{
+    height: 290px;
+    width: auto;
+    float: left;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+}
+
+h4{
+    font-size: 35px;
+    font-weight: 700; 
+    color:#2E314C;
+}
+
+p{
+    font-size: 20px; 
+}
+#precio{
+    font-size: 25px;
+    font-weight: 700; 
+    color:#2E314C;
+}
+#vendido{
+    font-size: 20px;
+    margin-left: 90%;
+}
