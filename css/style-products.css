@@ -10,6 +10,15 @@
 
 img{
     height: 290px;
+
+}
+
+.product-item{
+    color:black;
+}
+
+img{
+    height: 250px;
     width: auto;
     float: left;
     padding-left: 50px;
