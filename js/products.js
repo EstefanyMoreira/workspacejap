@@ -16,14 +16,12 @@ let productsArray = [];
                 </div>
                 <div>
                     <h4>` + product.name + `</h4> 
-                    <p>` + product.description + `</p>
+                    <p class="description">` + product.description + `</p>
                     <br>
                     <br> 
                     <p> Precio </p>
-                    <p id="precio"> USD ` + product.cost + `</p>
-                </div>
-                <div>
-                    <small id="vendido">` + product.soldCount + ` vendidos </small> 
+                    <p id="precio"> USD ` + product.cost + `
+                    <small>` + product.soldCount + ` vendidos </small> </p>
                 </div>
             </div>
             <hr>
