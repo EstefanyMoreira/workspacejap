@@ -166,7 +166,6 @@ input[type="password"]:focus {
 }
 
 .form-control:focus {
-  outline: none;
   box-shadow: 0 0 5px 2px #ffffff;
   border-color: #ffffff;
   background-color: #EFEFEF;
