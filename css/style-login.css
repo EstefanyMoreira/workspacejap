@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 50vw 50vw;
   height: 100vh;
+  padding: 0;
 }
 
 header {
@@ -33,7 +34,12 @@ nav ul {
   list-style-type: none; /* Elimina los puntos de lista */
   display: flex; 
   margin-left: 5%;
+  margin-top: 16px;
+  padding-left: 40px;
+}
 
+.nav-link {
+  display:unset;
 }
 .nav-item a {
   list-style-type: none; /* Elimina los puntos de lista */
@@ -76,6 +82,8 @@ nav ul {
 .left-section h1 {
 
   font-size: 6em;
+  font-weight: bold;
+  line-height: normal;
   margin: 0;
   align-self: center;
   opacity: 0; /* El texto empieza invisible al inicio */
@@ -119,6 +127,7 @@ h2 {
   font-size: 0.9em;
   color: #777;
   margin-bottom: 20px;
+  margin-top: 14.4px;
 }
 
 .login-box label {
@@ -156,7 +165,11 @@ input[type="password"]:focus {
   
 }
 
-
+.form-control:focus {
+  box-shadow: 0 0 5px 2px #ffffff;
+  border-color: #ffffff;
+  background-color: #EFEFEF;
+}
 
 
 .login-box button {
@@ -176,6 +189,8 @@ input[type="password"]:focus {
   background: #c13149;
 }
 
-
-
-
+@media (min-width: 992px) {
+  .container, .container-lg, .container-md, .container-sm {
+      max-width: 1024px;
+  }
+}
