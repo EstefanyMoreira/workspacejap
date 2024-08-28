@@ -1,7 +1,7 @@
 .login {
   font-family: 'Poppins';
   display: inline-flex;
-  height: 100vh;
+  height: 90vh;
 }
 
 header {
@@ -38,17 +38,15 @@ header {
  
   background: linear-gradient(90deg,#c13149,#ea4f55);
   color: white;
-  padding: 12%;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+ }
 
-}
 
 .left-section h1 {
- 
- font-family: 'Poppins';
+  margin-top: 30%;
+ margin-left: 24%;
+  font-family: 'Poppins';
  font-weight: 700;
-  font-size: 6vw;
+ font-size: 5vw;
   opacity: 0; /* El texto empieza invisible al inicio */
   /* animation: slideIn 1.3s ease-out forwards; /* Aplica la animación */
   animation: fadeIn 2s ease-out forwards; /* Aplica la animación del fade*/
@@ -135,8 +133,7 @@ input[type="password"]:focus {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.5s ease;
-  
-  }
+    }
 
 
 .login-box button:hover {
@@ -144,7 +141,13 @@ input[type="password"]:focus {
   
 }
 
-@media (max-width: 768px) {
+.login-box button:focus {
+  box-shadow: none;
+  
+}
+
+
+@media  (max-width: 768px)  {
 
 
    .login {
@@ -160,11 +163,19 @@ input[type="password"]:focus {
    }
    
   p , label {
-   font-size: 2vh;
+   font-size: 1.8vh;
   }
   
  }
 
+ 
+
+
+
+
+
+
+ 
 
 
 
