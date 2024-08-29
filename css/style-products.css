@@ -139,7 +139,7 @@ body {
 
 }
 /* Tableta en Modo Vertical */
-@media (max-width:768px) and (max-height: 1024px) and (orientation: portrait){
+@media (min-width:768px) and (max-width: 1023px) and (orientation: portrait){
     #products-container hr{
     margin-left: 25%;
     }
