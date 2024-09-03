@@ -1,46 +1,175 @@
 #products-container{
-    padding-top: 100px;
+    padding-top: 10px;
     align-items: center;
 }
 
 .product-item{
    color: black ;
    margin: auto;
+   margin-bottom: 3%;
+   margin-top: 3%;
+   cursor: pointer;
+   padding: 5%;
+   padding-left: 0;
 }
 
 img{
-    height: 290px;
-
-}
-
-.product-item{
-    color:black;
-}
-
-img{
-    height: 250px;
+    height: 310px;
     width: auto;
     float: left;
-    padding-left: 50px;
+    padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 50px;
 }
 
 h4{
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 700; 
     color:#2E314C;
+    margin-bottom: 2%;
 }
 
-p{
-    font-size: 20px; 
+p, small{
+    font-size: 23px;
+    font-weight: 400;
+    margin-right: 10%;
+    margin-bottom: 0;
+    color: #2E314C;
 }
+
 #precio{
-    font-size: 25px;
+    font-size: 40px;
     font-weight: 700; 
     color:#2E314C;
+    margin-right: 0;
 }
-#vendido{
+
+small{
+    float: inline-end;
+    margin-right: 0;
+    margin-top: 2%;
+}
+
+#products-container hr{
+    height: 2px;
+    width: 50%;
+    background-color: #2E314C;
+    color: #2E314C;
+    border-color: #2E314C;
+    opacity: 1;
+    margin-left: 35%;
+}
+
+.description {
+    color: black;
     font-size: 20px;
-    margin-left: 90%;
 }
+
+body {
+    font-family: 'Poppins';
+}
+
+.product-item:hover{
+    background-color: gainsboro;
+}
+
+/*Barra de navegación*/
+.navbar {
+    padding: 1% !important;
+    background-color: #2E314C !important;
+}
+
+.navbar-dark .navbar-nav .nav-link, #miPerfil{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: transparent; /*quita el borde del icono*/
+    padding: 0%;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+} /*icono de menu blanco */
+
+.navbar-collapse {
+    flex-grow: 0.2;
+}
+
+/*Barra de navegación para resolución menor a 1024px*/
+@media (max-width:1023px) {
+    .navbar-collapse {
+        position: absolute;
+        width: 50%;
+        top: 100%;
+        padding: 2%;
+        left: 0;
+        z-index: 1000;
+        background-color:#2E314C;
+    }
+}
+
+/*Smartphone Pequeño */
+@media (max-width:767px) {
+
+    img {
+        height: auto;
+        width: 100%;
+        padding-bottom: 5%;
+        padding-right: 0%;
+        padding-left: 5%;
+    }
+
+    h4, p, small {
+        margin-left: 5%;
+    }
+
+    h4, #precio{
+        font-size: 25px;
+    }
+    
+    .description, p, small{
+        font-size: 15px;
+    }
+
+    #products-container hr{
+        margin-left: 25%;
+    }
+
+}
+/* Tableta en Modo Vertical */
+@media (min-width:768px) and (max-width: 1023px) and (orientation: portrait){
+    #products-container hr{
+    margin-left: 25%;
+    }
+    
+    img{
+     width: 50%;
+     height: auto;
+    padding-left: 5%;
+    padding-right: 3%;
+    }
+    
+     #products-container{
+     float: right;
+     font-size: 0.1em;
+     padding-right: 4%;
+    }
+    .description{
+    font-size: 15px;
+    }
+    p{
+    font-size: 20px;
+    margin-right: 0%;
+    }
+    h4, #precio{
+    font-size: 30px;
+    }
+    small{
+     font-size: 15px;
+    }
+    h4{
+    margin-bottom: 0.2%;
+    }
+    }
