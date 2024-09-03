@@ -1,4 +1,4 @@
-const LIST_URL = "https://japceibal.github.io/emercado-api/cats_products/101.json"
+let LIST_URL = PRODUCTS_URL + localStorage.getItem("catID") + EXT_TYPE
 
 //array donde se cargarán los datos recibidos:
 let productsArray = [];
