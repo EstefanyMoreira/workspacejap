@@ -41,3 +41,53 @@ let productsArray = [];
             } 
         })
     });
+
+
+    let productsFiltradosArray = [];
+
+
+    //Entrega 3 filtrado de productos intervalo de precios
+ 
+function filtrarPrecios() {
+
+//obtener los valores numericos de los input
+//parseInt convierte el string en valores numericos enteros
+    let preciomin = parseInt(document.getElementById("preciomin").value)
+    let preciomax = parseInt(document.getElementById("preciomax").value)
+
+// agrego una validacion por si el usuario no ingresa letras
+    if (isNaN(preciomin) || isNaN(preciomax) ) {
+        alert("Por favor, ingresar valores numéricos.");}
+    
+    else if (preciomin > preciomax) {
+        alert("Precio mínimo debe ser menor a precio máximo");
+    }
+
+    else {
+
+    let productosFiltrados = productsArray.filter(product => 
+        product.cost >= preciomin && product.cost <= preciomax
+    );
+
+    
+
+    // Mostrar los productos filtrados en la página
+    showProductList(productosFiltrados);
+    
+}}
+
+//recorrer arreglo comparando los costos
+//      for (let product of productsArray) {
+//        if (product.cost >= preciomin && product.cost <= preciomax) {
+//            console.log (product.cost)
+
+//        }}}   
+
+
+//Agrego evento al boton de filtrar
+
+ let filtrarBtn = document.getElementById("filtrarbtn");
+
+ filtrarBtn.addEventListener("click", (event) => {
+ filtrarPrecios();
+ });
