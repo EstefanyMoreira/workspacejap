@@ -89,3 +89,5 @@ function filtrarPrecios() {
  filtrarBtn.addEventListener("click", (event) => {
  filtrarPrecios();
  });
+
+ 
