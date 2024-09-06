@@ -9,32 +9,18 @@ function showProductList(array) {
 
   for (let i = 0; i < array.length; i++) {
     let product = array[i];
-    htmlContentToAppend +=
-      `
-            <div class="product-item" data-product-id="` +
-      product.id +
-      `">
+    htmlContentToAppend += `
+            <div class="product-item" data-product-id="` + product.id + `"><div>
+                <img src="` + product.image + `" alt="product image" class="imgProduct">
+            </div>
                 <div>
-                    <img src="` +
-      product.image +
-      `" alt="product image" class="imgProduct">
-                </div>
-                <div>
-                    <h4>` +
-      product.name +
-      `</h4> 
-                    <p class="description">` +
-      product.description +
-      `</p>
+                    <h4>` + product.name + `</h4> 
+                    <p class="description">` + product.description + `</p>
                     <br>
                     <br> 
                     <p> Precio </p>
-                    <p id="precio"> USD ` +
-      product.cost +
-      `
-                    <small>` +
-      product.soldCount +
-      ` vendidos </small> </p>
+                    <p id="precio"> `+ product.currency + ` ` + product.cost +  `
+                    <small>` + product.soldCount + ` vendidos </small> </p>
                 </div>
             </div>
             <hr>
@@ -52,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedProducts();
     }
   });
+  searchProduct();
 });
 
 let productsFiltradosArray = [];
@@ -150,3 +137,21 @@ function selectedProducts() {
 // En la línea 13 del código se agregó el atributo data-product-id.
 // El prefijo data- permite crear atributos personalizados.
 // Son útiles para almacenar datos que se puedan usar en JS sin interferir con la estructura HTML.
+
+// Función para filtrar productos según lo que se escriba en la barra de búsqueda
+function searchProduct(){
+    let searchBar = document.getElementById("searchBar");
+        
+    searchBar.addEventListener("input", function() {
+        const input = document.getElementById("searchBar").value.toLowerCase();
+
+        let filteredProducts = productsArray.filter(products => {
+            return products.name.toLowerCase().includes(input) || products.description.toLowerCase().includes(input);
+        });
+    
+        showProductList(filteredProducts);
+    });
+}
+// El evento "input" detecta cada vez que se escribe algo.
+// .filter permite filtrar los elementos de un array según una condición.
+// En este caso filtra si la descripción o el nombre de los productos incluye el texto escrito en la barra de búsqueda.
