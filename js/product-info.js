@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <p class="description">${product.description}</p>
                     <br>
                     <small>${product.soldCount} vendidos</small>
-                    <p id="precio">USD ${product.cost}</p>
+                    <p id="precio">${product.currency} ${product.cost}</p>
                     <p>Imágenes relacionadas</p>
                     ${imagesHtml}
                 </div>
