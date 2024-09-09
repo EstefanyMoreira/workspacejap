@@ -27,6 +27,7 @@ function showProductList(array) {
             `;
   }
   document.getElementById("products-container").innerHTML = htmlContentToAppend;
+  selectedProducts();
 }
 
 // Cargar datos y mostrar productos cuando la página se haya cargado
@@ -35,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (resultObj.status === "ok") {
       productsArray = resultObj.data.products;
       showProductList(productsArray);
-      selectedProducts();
     }
   });
   searchProduct();
