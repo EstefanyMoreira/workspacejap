@@ -114,4 +114,44 @@ p#precio{
     margin: 8% 0;
 }
 
+body {
+    font-family: 'Poppins';
+}
+
+/*Barra de navegación*/
+.navbar {
+    padding: 1% !important;
+    background-color: #2E314C !important;
+}
+
+.navbar-dark .navbar-nav .nav-link, #miPerfil{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: transparent; /*quita el borde del icono*/
+    padding: 0%;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+} /*icono de menu blanco */
+
+.navbar-collapse {
+    flex-grow: 0.2;
+}
+
+/*Barra de navegación para resolución menor a 1024px*/
+@media (max-width:991px) {
+    .navbar-collapse {
+        position: absolute;
+        width: 50%;
+        top: 100%;
+        padding: 2%;
+        left: 0;
+        z-index: 1000;
+        background-color:#2E314C;
+    }
+}
     
