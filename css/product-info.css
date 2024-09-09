@@ -82,7 +82,8 @@ p, small{
 .relat{
     color: #2E314C;
     font-weight: bold;
-    padding-left: 29px;
+    padding-bottom: 3%;
+    padding-left: 1%;
     }
     
 p#precio{
@@ -100,13 +101,17 @@ p#precio{
     padding-bottom: 5%;
     }
     
-.related-image{
-    justify-content: left;
-    width: 22%;
-    height: auto;
-    margin-top: 3%;
-    margin-left: 29px;
-    margin-right: 2%;
-    margin-bottom: 3%;
-    }
+
+    .img_rel {
+
+        padding-left: 1%;
+        padding-right: 1%;
+
+    }      
+    
+.imagenesrel {
+    align-items: center;
+    margin: 8% 0;
+}
+
     

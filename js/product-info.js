@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let imagesHtml = '';
             for (let i = 2; i <= numImages; i++) {
                 const filename = `prod${productId}_${i}.jpg`;
-                imagesHtml += `<img src="${imageFolder}${filename}" alt="product image ${i}" class="related-image" onerror="this.style.display='none';">`;
+                imagesHtml += `<img src="${imageFolder}${filename}" alt="product image ${i}" class="col-3 img_rel" onerror="this.style.display='none';">`;
             }
 
             productsContainer.innerHTML = `
-                <div class="product-item" data-product-id="${product.id}">
+                <div class="product-item col-12" data-product-id="${product.id}">
                 <div>
                     <img src="${firstImageUrl}" alt="Product image" class="imgProduct">
                 </div>
@@ -97,9 +97,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     <br>
                     <small>${product.soldCount} vendidos</small>
                     <p id="precio">${product.currency} ${product.cost}</p>
-                    <p class="relat">Imágenes relacionadas</p>
-                    ${imagesHtml}
                 </div>
+                <div class="container imagenesrel">
+                    <p class="relat">Imágenes relacionadas</p>
+                    <div class= col-12>
+                    ${imagesHtml}
+                    
+                 </div>
             </div>
             `;
         // se llaman las funciones para mostrar datos de la página actual en el breadcrumb
