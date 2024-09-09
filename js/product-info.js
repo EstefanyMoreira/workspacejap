@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // crear el breadcrumb
     function createBreadcrumb(categoryName, productName) {
         const breadcrumbData = [
-            { text: 'Categoría', href: '/categories.html' },
-            { text: categoryName, href: `/products.html` },
+            { text: 'Categoría', href: 'categories.html' },
+            { text: categoryName, href: 'products.html' },
             { text: productName, href: '#' }
         ];
 
