@@ -1,134 +1,32 @@
-/* estilo para breadcrumb */
-
-#breadcrumb {
-    padding: 10px;
-    border-radius: 5px;
-    margin: 20px;
-    margin-left: 10%;
-    }
-    
-.breadcrumb-item {
-    display: inline;
-    margin-right: 5px;
-    font-size: 17px; /
-    }
-    
-.breadcrumb-item a {
-    color: #6c757d;
-    text-decoration: none;
-    }
-    
-.breadcrumb-item a:hover {
-    font-weight: bold;
-    }
-    
-.breadcrumb-separator {
-    color: #6c757d;
-    margin-left: 4px;
-    margin-right: 4px;
-    }
-    
-.breadcrumb-item.active {
-    color: #6c757d;
-    font-weight: bold;
-    }
-    
-    /* estilo para producto */
-    
-#products-container{
-    align-items: center;
-    }
-    
-.product-item{
-    color: black ;
-    margin: auto;
-    margin-bottom: none;
-    margin-top: none;
-    cursor: pointer;
-    padding-top: 0;
-    padding-left: 0;
-    }
-    
-.imgProduct{
-    width: 50%;
-    height: auto;
-    float: left;
-    padding-left: 30px;
-    padding-right: 30px;
-    }
-    
-h4{
-    font-size: 35px;
-    font-weight: 700; 
-    color:#2E314C;
-    padding-top: none;
-    }
-    
-p, small{
-    font-size: 20px;
-    font-weight: 400;
-    margin-right: 10%;
-    margin-bottom: 0;
-    color: #2E314C;
-    }
-    
-.desc{
-    padding-top: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #2E314C;
-    }
-    
-.relat{
-    color: #2E314C;
-    font-weight: bold;
-    padding-bottom: 3%;
-    padding-left: 1%;
-    }
-    
-p#precio{
-    font-size: 35px;
-    font-weight: 700; 
-    color:#2E314C;
-    margin-right: 0;
-    padding-bottom: 3%;
-    }
-    
-.description {
-    color: black;
-    font-size: 15px;
-    font-weight: 500;
-    padding-bottom: 5%;
-    }
-    
-
-    .img_rel {
-
-        padding-left: 1%;
-        padding-right: 1%;
-
-    }      
-    
-.imagenesrel {
-    align-items: center;
-    margin: 8% 0;
-}
-
 body {
+    /*background: linear-gradient(to bottom, #ededed , #ffffff );*/
+    background-color: #1C0E34;
     font-family: 'Poppins';
+
 }
 
-/*Barra de navegación*/
+/* Comienza barra de navegación*/
 .navbar {
     padding: 1% !important;
-    background-color: #2E314C !important;
+    background-color: #1C0E34 !important;
 }
 
-.navbar-dark .navbar-nav .nav-link, #miPerfil{
+.navbar-dark .navbar-nav  {
     color: #FFFFFF;
-    font-weight: bold;
+    font-weight: 400;
 }
 
+#miPerfil {
+
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+
+.nav-link:hover {
+    font-weight: 700;
+    color: #FFFFFF;
+}
 .navbar-dark .navbar-toggler {
     border-color: transparent; /*quita el borde del icono*/
     padding: 0%;
@@ -141,6 +39,250 @@ body {
 .navbar-collapse {
     flex-grow: 0.2;
 }
+
+
+/* estilo para breadcrumb */
+
+#breadcrumb {
+   align-items: center;
+    border-radius: 5px;
+    margin: 15px;
+    margin-left: 12%;
+    }
+    
+.breadcrumb-item {
+    display: inline;
+    font-size: 1rem; /
+    }
+    
+.breadcrumb-item a {
+    color: #ffffff;
+    text-decoration: none;
+    }
+    
+.breadcrumb-item a:hover {
+    font-weight: bold;
+    
+    }
+    
+.breadcrumb-separator {
+    color: #ffffff;
+    margin-left: 4px;
+    margin-right: 4px;
+    size: 1rem;
+    }
+    
+.breadcrumb-item.active {
+    color: #ffffff;
+    font-weight: bold;
+    }
+    
+   
+   
+ /* estilo para producto */
+    
+#products-container{
+    align-items: center;
+    
+    }
+    
+.product-item {
+    color: #1C0E34 ;  
+    cursor: pointer;   
+    display: flex;        
+    }
+
+ /* estilo de imagen principal */
+
+.col-6 {
+   flex: auto ;
+   }
+
+.bloque_madre {  /*bloque contenedor de todo*/
+    background-color: #ffffff;
+    margin-top: 0;
+    padding: 5%;
+    padding-bottom: 5%;  
+    border-radius: 30px 30px 0 0 ;
+    }
+
+    /*contenedor img e imagen*/
+
+.cont_img{
+    width: 100%;
+    margin-right: 3%;
+}
+
+.imgProduct{
+    display: block;
+    margin-top: 0;  
+    border-radius: 15px; 
+    display: block;
+    width: 100%;
+    height: auto;}
+
+
+    /*contenedor seccion izquierda*/
+
+.desc_izquierda {
+        width: 100%;
+    }
+
+.bloque_superior     /*contiene nombre y precio*/
+{
+
+        padding: 0 5% 0;
+    }
+
+    h4{
+        font-size: 1.5rem;
+        font-weight: 700; 
+        color:#1C0E34;
+        padding-top: none;
+        }
+
+     p, small{
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #1C0E34;
+            }
+
+.bloque_color {    /*contiene descripcion de producto */
+
+   padding: 5%;
+   background-color: #E4ECFF;
+   border-radius: 30px;
+   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+   margin-bottom: 5%; }
+
+   
+#vendidos {
+    padding-left: 5%;
+}
+    
+.desc{ /*titulo "sobre este producto" */
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #1C0E34;
+    }
+
+ .description {
+        color: #1C0E34;
+        font-size: 15px;
+        font-weight: 400;
+        }
+    
+
+ /*Comienza seccion de imagenes relacionadas*/
+
+.relat{
+    color: #1C0E34;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-left: 1%;
+    }
+    
+p#precio{
+    font-size: 2rem;
+    font-weight: 700; 
+    color:#1C0E34;
+    }
+
+    .img_rel {
+
+        padding-left: 1%;
+        padding-right: 1%;
+
+    }      
+    
+.imagenesrel {
+    align-items: center;
+    margin: 8% 0;
+    
+}
+
+.img_rel {
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
+.img_rel:hover {
+    transform: scale(1.2); /* Escalar la imagen al 120% */
+}
+
+
+ /*Botones y sus contenedores*/
+
+   .cont_boton{
+    background-color: #E4ECFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 5%;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .cont_boton p {
+        font-weight: 700;
+        margin: 0;
+    }
+ 
+
+    .nameButton {
+        display: flex;
+        justify-content: space-between;
+
+        
+    }
+
+    .btnBlockRojo {
+        background: #e83b57;
+        color: #ffffff; 
+        font-weight: 700; 
+        border: none;
+        border-radius: 7px;
+        height: 2rem;
+        width: 2rem;
+        transition: background-color 0.5s ease;
+
+    }
+    
+   
+    .btnBlockRojo:hover {
+        background: #c13149;    
+
+    }
+
+    #btnBlockRojo {
+        justify-content: flex-end;
+    }
+
+    .btnRojo {
+        background: #e83b57;
+        color: #ffffff; 
+        font-weight: 700; 
+        align-items: right; 
+        border: none;
+        border-radius: 10px;
+        height: 2.5rem;
+        width: 8rem;
+        transition: background-color 0.5s ease;
+      
+    
+    }
+
+    
+    .btnRojo:hover {
+    background: #c13149;    
+    }
+
+  /*Comienza estilo de Footer*/
+
+
+    footer {
+        background-color: none;
+        align-items: center;
+    }
 
 /*Barra de navegación para resolución menor a 1024px*/
 @media (max-width:991px) {
@@ -155,3 +297,4 @@ body {
     }
 }
     
+
