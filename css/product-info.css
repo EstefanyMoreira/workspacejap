@@ -46,7 +46,7 @@ body {
 #breadcrumb {
    align-items: center;
     border-radius: 5px;
-    margin: 15px;
+    margin: 2%;
     margin-left: 12%;
     }
     
@@ -104,20 +104,14 @@ body {
     padding: 5%;
     padding-bottom: 5%;  
     border-radius: 30px 30px 0 0 ;
+    display: flex;
     }
 
     /*contenedor img e imagen*/
 
-.cont_img{
-    width: 100%;
-    margin-right: 3%;
-}
-
 .imgProduct{
-    display: block;
     margin-top: 0;  
     border-radius: 15px; 
-    display: block;
     width: 100%;
     height: auto;}
 
@@ -125,7 +119,7 @@ body {
     /*contenedor seccion izquierda*/
 
 .desc_izquierda {
-        width: 100%;
+        display: block;
     }
 
 .bloque_superior     /*contiene nombre y precio*/
@@ -157,7 +151,7 @@ body {
 
    
 #vendidos {
-    padding-left: 5%;
+    padding-left: 8%;
 }
     
 .desc{ /*titulo "sobre este producto" */
@@ -218,7 +212,7 @@ p#precio{
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    padding-left: 5%;
+    padding-left: 7%;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -297,4 +291,144 @@ p#precio{
     }
 }
     
+/*Media queries para pantalla small */
 
+@media (max-width: 767px) {
+
+    .breadcrumb-item {
+        display: inline;
+        font-size: 0.6rem; /
+        }
+        
+    .breadcrumb-item a {
+        color: #1C0E34;
+        text-decoration: none;
+        }
+        
+    .breadcrumb-item a:hover {
+        font-weight: bold;
+        
+        }
+        
+    .breadcrumb-separator {
+        color: #1C0E34;
+        size: 1rem;
+        }
+        
+    .breadcrumb-item.active {
+        color: #1C0E34;
+        }
+
+    body {
+        background-color: rgb(255, 255, 255);
+        font-family: 'Poppins';
+    
+    }
+
+    .bloque_madre {
+        padding-top: 0;
+        background-color: none;
+     }
+
+     .cont_img {
+        padding: 0 8% 8% 8%;
+    
+        
+     }
+     .desc_izquierda {
+        padding: -10%;
+     }
+
+    .bloque_color {
+        background-color: transparent;
+        box-shadow: none;
+     }
+
+     .bloque_color_sm {
+        padding: 5%;
+        padding-bottom: 10%;
+
+     background-color: #E4ECFF;
+     border-radius: 30px;
+     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 5%;}
+
+      .cont_boton {
+        background-color: #FFFFFF;
+        border-radius: 12px;
+      }
+      
+      
+      h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+
+       #precio{
+
+        font-size: 1rem;
+
+       }
+
+      #vendidos {
+        padding-left: 5%;
+        font-size: 0.7rem;
+      }
+
+      .cont_boton p {
+      padding-left: 1%;
+      }
+
+      .btnRojo { 
+        font-size: 0.9rem;
+        width: 7rem;
+        border-radius: 12px;
+
+      }
+
+     
+      .relat {
+        padding-left: 5%;
+      }
+      .img_rel {
+        
+        width: 100%; 
+        height: auto; 
+        padding: 0 8% 4% 8%;
+      }
+
+   
+}
+
+/* Tableta en Modo Vertical */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+
+    .bloque_madre {
+        padding: 15%;
+        padding-top: 10%;
+
+            }
+
+    .cont_img {
+       
+        padding-bottom: 10%;
+        
+    }
+
+    .bloque_superior{
+
+        align-items: center;
+    }
+ h4 {
+    font-size: 2rem;
+
+ }
+
+ .relat {
+    padding-left: 5%;
+    font-size: 1.2rem;
+  }
+    .img_rel {
+        padding: 5%;
+    }
+}
