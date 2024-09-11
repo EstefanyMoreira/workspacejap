@@ -86,24 +86,46 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             productsContainer.innerHTML = `
-                <div class="product-item col-12" data-product-id="${product.id}">
-                <div>
-                    <img src="${firstImageUrl}" alt="Product image" class="imgProduct">
+                <div class="product-item" data-product-id="${product.id}">
+
+                 <div class="col-6 col-sm-12 cont_img">
+                <img src="${firstImageUrl}" alt="Product image" class="imgProduct">
                 </div>
-                <div>
+            
+
+                <div class="col-6 col-sm-12 desc_izquierda" >
+                   <div class="bloque_superior">
+                   <div class="nameButton">
                     <h4>${product.name}</h4> 
-                    <p class="desc">Descripción</p>
-                    <p class="description">${product.description}</p>
-                    <br>
-                    <small>${product.soldCount} vendidos</small>
+                    <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
+                    <i class="fa-regular fa-heart"></i></button>
+                    </div>
+
+                    <small> llevalo hoy por </small>
                     <p id="precio">${product.currency} ${product.cost}</p>
+                    </div>
+
+
+                    <div class="bloque_color">
+                    <p class="desc">Sobre este producto</p>
+                    <p class="description">${product.description}</p>
+                    </div>
+
+                    <small id="vendidos">${product.soldCount} personas ya lo eligieron</small>
+                   
+                    <div class="cont_boton">
+                    <p>¡Obten el tuyo ahora!</p>
+                <button type="button" class="btnRojo" value="comprar">Comprar</button>
                 </div>
-                <div class="container imagenesrel">
-                    <p class="relat">Imágenes relacionadas</p>
-                    <div class= col-12>
-                    ${imagesHtml}
+             </div>
                     
-                 </div>
+              
+            </div>
+                <div class=" col-12 imagenesrel">
+                    <p class="relat">Imágenes relacionadas</p>
+                    <div class= "col-12">
+                    ${imagesHtml}
+                </div>
             </div>
             `;
         // se llaman las funciones para mostrar datos de la página actual en el breadcrumb
