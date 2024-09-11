@@ -10,29 +10,36 @@ function showProductList(array) {
   for (let i = 0; i < array.length; i++) {
     let product = array[i];
     htmlContentToAppend += `
-            <div class="product-item" data-product-id="` + product.id + `"><div>
+          <div class="product-item row" data-product-id="` + product.id + `">
+            <div class="col-6">
                 <img src="` + product.image + `" alt="product image" class="imgProduct">
             </div>
-                <div>
-                <div class="nameButton">
+                
+
+              <div class="bloque_madre col-6">
+                <div class="nameButton col-12">
                     <h4>` + product.name + `</h4> 
                     <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
                     <i class="fa-regular fa-heart"></i></button>
-                    </div>
-                    <p class="description">` + product.description + `</p>
-                    <br>
-                    <br> 
-                    <div class=bloqueGrande>
-                    <p> Precio </p>
+
+                </div>
+
+               <div class= "col-12">
+                     <p class="description">` + product.description + `</p>
+                     <small>` + product.soldCount + ` vendidos </small> </p>
+                </div>
+
+               <div class=bloqueGrande >
+                   
                     <p id="precio"> `+ product.currency + ` ` + product.cost +  `
-                    <small>` + product.soldCount + ` vendidos </small> </p>
-                    <div class="cont_boton">
+                   
                     <button type="button" class="btnRojo" value="comprar">Comprar</button>
-                </div>
-                    </div>
-                </div>
+                  
+              </div>
+                
+             </div>
             </div>
-            <hr>
+            
             `;
   }
   document.getElementById("products-container").innerHTML = htmlContentToAppend;
