@@ -1,6 +1,8 @@
 #products-container {
   padding-top: 10px;
   align-items: center;
+padding-left: 0 rem;
+padding-right: 0 rem;
 }
 
 .product-item {
@@ -9,29 +11,39 @@
   margin-bottom: 3%;
   margin-top: 3%;
   cursor: pointer;
-  padding: 5%;
+  padding: 0%;
   padding-left: 0;
+  box-shadow: 0px 6px 8px rgba(93, 85, 94, 0.25);
+  border-radius: 30px;
+  border-top-right-radius: 30px;
+  background: white;
 }
 
+
 img {
-  height: 310px;
+  
+  height: 340px;
   width: auto;
   float: left;
   padding-left: 30px;
   padding-right: 30px;
+  padding-top: 5%;
   padding-bottom: 50px;
+  border-radius: 9px;
 }
 
 h4 {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
   color: #2e314c;
+  margin-top: 4%;
   margin-bottom: 2%;
+  padding-top: 5%;
+  justify-content: flex-start;
 }
 
-p,
-small {
-  font-size: 23px;
+p {
+  font-size: 18px;
   font-weight: 400;
   margin-right: 10%;
   margin-bottom: 0;
@@ -39,16 +51,74 @@ small {
 }
 
 #precio {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
   color: #2e314c;
   margin-right: 0;
+  padding-bottom: 6%;
 }
 
 small {
+  font-size: 23px;
+  font-weight: 400;
+  color: #2e314c;
   float: inline-end;
-  margin-right: 0;
-  margin-top: 2%;
+  margin-right: 3%;
+ margin-top: 1%;
+ margin-bottom: 5%;
+ margin-right: auto;
+}
+
+.btnBlockRojo{
+  background: #c13149;
+  justify-content: flex-end;
+color: #ffffff;
+font-weight: 700;
+border: none;
+border-radius: 7px;
+height: 2rem;
+width: 2rem;
+transition: background-color 0.5s ease;
+box-sizing: border-box;
+-webkit-appareance: button;
+margin: 0;
+font-family:inherit;
+font-size:inherit;
+line-height: inherit;
+}
+
+.nameButton {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5%;
+  box-sizing: border-box;
+}
+
+.btnBlockRojo:hover{
+  background: #c13149;
+}
+
+.bloqueGrande{
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5;
+  align-items: flex-end;
+}
+.btnRojo {
+  background: #e83b57;
+  color: #ffffff; 
+  font-weight: 700; 
+  align-items: right; 
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  width: 8rem;
+  transition: background-color 0.5s ease;
+  margin-top: 10px;
+}
+
+.btnRojo:hover {
+background: #c13149;    
 }
 
 #products-container hr {
