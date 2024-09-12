@@ -10,35 +10,30 @@ function showProductList(array) {
   for (let i = 0; i < array.length; i++) {
     let product = array[i];
     htmlContentToAppend += `
-          <div class="product-item row" data-product-id="` + product.id + `">
-            <div class="col-6">
-                <img src="` + product.image + `" alt="product image" class="imgProduct">
-            </div>
-                
+         <div class="product-item row" data-product-id="` + product.id + `">
+    <div class="cont_img col-lg-6 col-md-6 col-sm-12">
+        <img src="` + product.image + `" alt="product image" class="imgProduct">
+    </div>
+    
+    <div class="bloque_madre col-lg-6 col-md-6 col-sm-12">
+        <div class="nameButton col-12">
+            <h4>` + product.name + `</h4> 
+            <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+        </div>
 
-              <div class="bloque_madre col-6">
-                <div class="nameButton col-12">
-                    <h4>` + product.name + `</h4> 
-                    <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
-                    <i class="fa-regular fa-heart"></i></button>
+        <div class="col-12">
+            <p class="description">` + product.description + `</p>
+            <small>` + product.soldCount + ` vendidos</small>
+        </div>
 
-                </div>
-
-               <div class= "col-12">
-                     <p class="description">` + product.description + `</p>
-                     <small>` + product.soldCount + ` vendidos </small> </p>
-                </div>
-
-               <div class=bloqueGrande >
-                   
-                    <p id="precio"> `+ product.currency + ` ` + product.cost +  `
-                   
-                    <button type="button" class="btnRojo" value="comprar">Comprar</button>
-                  
-              </div>
-                
-             </div>
-            </div>
+        <div class="bloqueGrande">
+            <p id="precio">` + product.currency + ` ` + product.cost + `</p>
+            <button type="button" class="btnRojo" value="comprar">Comprar</button>
+        </div>
+    </div>
+</div>
             
             `;
   }

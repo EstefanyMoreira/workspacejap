@@ -1,8 +1,6 @@
 #products-container {
-  padding-top: 10px;
   align-items: center;
-padding-left: 0 rem;
-padding-right: 0 rem;
+  
 }
 
 .product-item {
@@ -11,8 +9,7 @@ padding-right: 0 rem;
   margin-bottom: 3%;
   margin-top: 3%;
   cursor: pointer;
-  padding: 0%;
-  padding-left: 0;
+  padding: 3% 5%;
   box-shadow: 0px 6px 8px rgba(93, 85, 94, 0.25);
   border-radius: 30px;
   border-top-right-radius: 30px;
@@ -20,35 +17,37 @@ padding-right: 0 rem;
   
 }
 
+.cont_img {
+  border-radius: 5%;
+  overflow: hidden;
+  padding: 0;
+}
 
 img {
-    height: 340px;
-  width: auto;
-  float: left;
+    width: 100%;
+  height: auto;
 
 }
 
 h4 {
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #2e314c;
   justify-content: flex-start;
 }
 
 p {
-  font-size: 18px;
+  font-size: 0.4rem;
   font-weight: 400;
-  margin-right: 10%;
   margin-bottom: 0;
   color: #2e314c;
 }
 
 #precio {
-  font-size: 30px;
+  font-size: 1.7rem;
   font-weight: 700;
   color: #2e314c;
-  margin-right: 0;
-  padding-bottom: 6%;
+  
 }
 
 small {
@@ -83,16 +82,24 @@ line-height: inherit;
 .nameButton {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 5%;
   }
 
 .btnBlockRojo:hover{
   background: #c13149;
 }
 
+.bloque_madre {
+  padding:  0;
+  padding-left: 5%;
+}
+
 .bloqueGrande{
   display: flex;
   justify-content: space-between;
-  line-height: 1.5;
+  align-items: center;
+  padding-top: 16% ;
+  
   
 }
 .btnRojo {
@@ -105,7 +112,7 @@ line-height: inherit;
   height: 2.5rem;
   width: 8rem;
   transition: background-color 0.5s ease;
-  margin-top: 10px;
+ 
 }
 
 .btnRojo:hover {
@@ -175,74 +182,59 @@ body {
 
 /*Smartphone Pequeño */
 @media (max-width: 767px) {
-  img {
-    height: auto;
-    width: 100%;
-    padding-bottom: 5%;
-    padding-right: 0%;
-    padding-left: 5%;
+
+  .product-item{
+
+    margin: 0 8%;
+    margin-bottom: 3%;
+    padding: 8%;
   }
 
-  h4,
-  p,
-  small {
-    margin-left: 5%;
+  .cont_img {
+    padding:0;   margin-bottom: 5%;
   }
 
-  h4,
-  #precio {
-    font-size: 25px;
-  }
-
-  .description,
-  p,
-  small {
-    font-size: 15px;
-  }
-
-  #products-container hr {
-    margin-left: 25%;
-  }
-}
-/* Tableta en Modo Vertical */
-@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-  #products-container hr {
-    margin-left: 25%;
-  }
-
-  img {
-    width: 50%;
-    height: auto;
-    padding-left: 5%;
-    padding-right: 3%;
-  }
-
-  #products-container {
-    float: right;
-    font-size: 0.1em;
-    padding-right: 4%;
-  }
   .description {
-    font-size: 15px;
+    font-size: 0.8rem;
   }
-  p {
-    font-size: 20px;
-    margin-right: 0%;
-  }
-  h4,
-  #precio {
-    font-size: 30px;
-  }
+
   small {
-    font-size: 15px;
+    font-size: 0.6rem;
   }
-  h4 {
-    margin-bottom: 0.2%;
+
+  #precio, h4 {
+    font-size: 1.4rem;
   }
+
+
+  .btnRojo {
+    width: 6rem;
+  }
+
+  .bloqueGrande{
+    padding-top: 3%;
+  }
+  
 }
 
-.controles {
-  text-align: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+
+
+
+/* Tableta en Modo Vertical */
+
+
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+
+
+
+
+img {
+  display: block;
+}
+
+  
+ 
+
+
+ 
 }
