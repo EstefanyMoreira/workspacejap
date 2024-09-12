@@ -145,13 +145,22 @@ body {
 /*Barra de navegación*/
 .navbar {
   padding: 1% !important;
-  background-color: #2e314c !important;
+  background-color: #1C0E34 !important;
 }
 
-.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav  {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
 #miPerfil {
-  color: #ffffff;
-  font-weight: bold;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.nav-link:hover {
+  font-weight: 700;
+  color: #FFFFFF;
 }
 
 .navbar-dark .navbar-toggler {
@@ -171,12 +180,14 @@ body {
 @media (max-width: 991px) {
   .navbar-collapse {
     position: absolute;
-    width: 50%;
+    width: 40%;
     top: 100%;
-    padding: 2%;
+    padding: 0 5% 2%;
     left: 0;
     z-index: 1000;
-    background-color: #2e314c;
+    background-color:#1C0E34;
+    border-radius: 0 0 15px 0;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 
