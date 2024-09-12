@@ -82,25 +82,56 @@ document.addEventListener("DOMContentLoaded", function() {
             let imagesHtml = '';
             for (let i = 2; i <= numImages; i++) {
                 const filename = `prod${productId}_${i}.jpg`;
-                imagesHtml += `<img src="${imageFolder}${filename}" alt="product image ${i}" class="related-image" onerror="this.style.display='none';">`;
+                imagesHtml += `<img src="${imageFolder}${filename}" alt="product image ${i}" class="col-lg-3 col-md-12 col-sm-12 img_rel" onerror="this.style.display='none';">`;
             }
 
             productsContainer.innerHTML = `
                 <div class="product-item" data-product-id="${product.id}">
-                <div>
-                    <img src="${firstImageUrl}" alt="Product image" class="imgProduct">
+                    <div class="row">
+                
+                 <div class="col-lg-6  col-md-12 col-sm-12 cont_img">
+                <img src="${firstImageUrl}" alt="Product image" class="imgProduct ">
                 </div>
-                <div>
+                  
+
+                <div class="col-lg-6 col-md-12 col-sm-12 desc_izquierda" >
+                   <div class="bloque_superior">
+                   <div class="nameButton">
                     <h4>${product.name}</h4> 
-                    <p class="desc">Descripción</p>
-                    <p class="description">${product.description}</p>
-                    <br>
-                    <small>${product.soldCount} vendidos</small>
+                    <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
+                    <i class="fa-regular fa-heart"></i></button>
+                    </div>
+
+                    <small> llevalo hoy por </small>
                     <p id="precio">${product.currency} ${product.cost}</p>
+                    </div>
+
+                   
+                    <div class="bloque_color_sm">
+                    <div class="bloque_color">
+                    <p class="desc">Sobre este producto</p>
+                    <p class="description">${product.description}</p>
+                    </div>
+
+                    <small id="vendidos">${product.soldCount} personas ya lo eligieron</small>
+                   
+                    <div class="cont_boton">
+                    <p>¡Obten el tuyo ahora!</p>
+                <button type="button" class="btnRojo" value="comprar">Comprar</button>
+                </div>
+                </div>
+                </div>
+
+             </div>
+                    
+              
+            </div class="row"> 
+                <div class=" col-lg-12 col-md-12 col-sm-12 imagenesrel">
                     <p class="relat">Imágenes relacionadas</p>
+                    <div class= "col-12">
                     ${imagesHtml}
                 </div>
-            </div>
+              </div>
             `;
         // se llaman las funciones para mostrar datos de la página actual en el breadcrumb
             const categoryName = product.category;
