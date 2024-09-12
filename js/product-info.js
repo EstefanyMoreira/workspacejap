@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // crear el breadcrumb
     function createBreadcrumb(categoryName, productName) {
         const breadcrumbData = [
-            { text: 'Categoría', href: '/categories.html' },
-            { text: categoryName, href: `/products.html` },
+            { text: 'Categoría', href: 'categories.html' },
+            { text: categoryName, href: 'products.html' },
             { text: productName, href: '#' }
         ];
 
@@ -18,20 +18,24 @@ document.addEventListener("DOMContentLoaded", function() {
         breadcrumbContainer.innerHTML = '';
 
         breadcrumbData.forEach((item, index) => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('breadcrumb-item');
-
+            const span = document.createElement('span');
+            span.classList.add('breadcrumb-item');
+            
             if (item.href && index < breadcrumbData.length - 1) {
-                const link = document.createElement('a');
-                link.href = item.href;
-                link.textContent = item.text;
-                listItem.appendChild(link);
+              const link = document.createElement('a');
+              link.href = item.href;
+              link.textContent = item.text;
+              span.appendChild(link);
+              const separator = document.createElement('span');
+            separator.textContent = ' > ';
+            separator.classList.add('breadcrumb-separator');
+            breadcrumbContainer.appendChild(span);
+            breadcrumbContainer.appendChild(separator);
             } else {
-                listItem.textContent = item.text;
-                listItem.classList.add('active');
+             span.textContent = item.text;
+            span.classList.add('active');
+            breadcrumbContainer.appendChild(span);
             }
-
-            breadcrumbContainer.appendChild(listItem);
         });
     }
 
@@ -88,12 +92,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div>
                     <h4>${product.name}</h4> 
-                    <p>Descripción</p>
+                    <p class="desc">Descripción</p>
                     <p class="description">${product.description}</p>
                     <br>
                     <small>${product.soldCount} vendidos</small>
-                    <p id="precio">USD ${product.cost}</p>
-                    <p>Imágenes relacionadas</p>
+                    <p id="precio">${product.currency} ${product.cost}</p>
+                    <p class="relat">Imágenes relacionadas</p>
                     ${imagesHtml}
                 </div>
             </div>
