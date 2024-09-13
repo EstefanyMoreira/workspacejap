@@ -58,20 +58,32 @@
       </div>
     </nav>
 
-    <div class="controles">
-      <input type="search" placeholder="buscar..." id="searchBar">
-      <input
+    <div class="controles row">
+      <div class="input row">
+
+      <div class="col-lg-12 col-md-12 col-sm-6  text-end">
+
+      <input class="col-lg-3 col-md-3 col-sm-6" type="search" placeholder="buscar..." id="searchBar">
+      
+      
+      <input class=" col-lg-2 col-md-2 col-sm-2"
         type="type"
         name="preciomin"
         placeholder="precio mínimo"
-        id="preciomin"
-      />
-      <input
-        type="type"
+        id="preciomin"/>
+
+      <input   
+     
+      class="col-lg-2 col-md-2 col-sm-2"
+      type="type"
         name="preciomax"
         placeholder="precio máximo"
-        id="preciomax"
-      />
+        id="preciomax" />
+
+      </div>
+
+
+        <div class=" botones text-end">
       <button name="filtrar" type="button" id="filtrarbtn">Filtrar</button>
       <button id="price-up">
         <i class="fa-solid fa-arrow-up-short-wide"></i>$
@@ -82,6 +94,9 @@
       <button id="relevance">
         <i class="fa-solid fa-arrow-down-wide-short"></i>Rel
       </button>
+    </div>
+  </div>
+
     </div>
 
     <main class="pb-5 container">
