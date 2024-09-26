@@ -487,3 +487,7 @@ p#precio{
   .carrousel-container button.next {
     right: 20px;
   }
+
+  #carousel{
+    background-color: white;
+  }

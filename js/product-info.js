@@ -209,4 +209,32 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+// calificaciones de product-info
+const CALIFICACIONES = PRODUCT_INFO_COMMENTS_URL + productId + EXT_TYPE;
+
+
+getProductInfo(CALIFICACIONES).then(function (resultObj) {
+  if (resultObj.status === "ok") {
+    const comments = resultObj.data;
+
+
+    const calif = document.getElementById("comments");
+
+    calif.innerText = "";
+
+     comments.forEach((cal, index) => {
+      const isActive = index === 0 ? "active" : "";
+      calif.innerHTML += `
+      <div class="carousel-item ${isActive}">
+      <h3> ${cal.user} </h3>
+      <p> ${cal.description} </p>
+      </div>
+      `;
+      });
+}
 });
+
+
+});
+
+
