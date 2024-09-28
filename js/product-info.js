@@ -233,11 +233,14 @@ getProductInfo(CALIFICACIONES).then(function (resultObj) {
         }
       }
 
+      let commentDate = new Date(cal.dateTime);
+      let date = commentDate.getDate() + "/" + (commentDate.getMonth() + 1) + "/" + commentDate.getFullYear();
+
       calif.innerHTML += `
       <div class="carousel-item ${isActive}">
       <h3> ${cal.user} </h3>
       <p> ${cal.description} </p>
-      <p> ${cal.dateTime} </p>
+      <p> ${date} </p>
       <div class="cicles">${circles}</div>
       </div>
       `;
