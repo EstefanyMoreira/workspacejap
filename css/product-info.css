@@ -498,3 +498,61 @@ p#precio{
   .empty-circle {
     color: #DDE7FF;
   }
+
+  /*Seccion de comentarios*/ 
+
+
+   /*Seccion de enviar comentarios*/ 
+
+
+ .carouselandForm {
+    background-color: #ffffff;
+    margin-top: 0;
+    margin: 0;
+    
+    display: flex;
+
+
+}
+
+  #seccion_comentarios {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 3%;
+    
+  }
+
+  .enviar_comentarios {
+    width: 100%;
+    display: flex;
+  }
+
+  .primeraLinea {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .resenaEnviar {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1em ;
+     display: inline;    
+
+  }
+
+  .carrousel-container {
+    display: flex;
+  }
+
+textarea {
+    padding: 5%;
+    background-color: #E4ECFF;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 5% 0;
+    border: none;
+    display: block;
+
+}

@@ -52,7 +52,12 @@
       <div id="products-container">
       </div>
     </div>
-      <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+    <!--Empieza seccion con carousel y form -->
+
+    <div class="carouselandForm row" id = "seccion_comentarios">
+   
+<div class="col-6">
+      <div id="carousel" class="carousel slide " data-bs-ride="carousel">
         <div id="comments" class="carousel-inner"></div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -64,6 +69,36 @@
       </button>
     
       </div>
+      </div>
+
+          <!--Form -->
+
+
+        <div class="col-6">
+
+          
+        <form action="/ruta-para-enviar-comentarios"  method="post" id="enviar_comentarios">
+
+          <div class="primeraLinea ">
+
+            <p class="resenaEnviar ">Comparte tu reseña</p> 
+
+          <select id="calificacion"  name="calificacion" required>
+            <option value=""> Califica tu compra:</option>
+            <option value="1">1 - Muy Mala</option>
+            <option value="2">2 - Mala</option>
+            <option value="3">3 - Buena</option>
+            <option value="4">4 - Muy Buena</option>
+            <option value="5">5- Excelente</option>
+        </select>
+      </div>
+
+        <textarea id="comentarios" name="comentarios" class="col-12"  rows="4" cols="50" placeholder="Escribe tu resena aquí..."></textarea><br>
+        <button type="submit" class="btnRojo">Enviar</button>
+    </form>
+        </div>
+        
+        
   </main>
 
 
