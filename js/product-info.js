@@ -217,21 +217,35 @@ getProductInfo(CALIFICACIONES).then(function (resultObj) {
   if (resultObj.status === "ok") {
     const comments = resultObj.data;
 
-
     const calif = document.getElementById("comments");
 
     calif.innerText = "";
 
-     comments.forEach((cal, index) => {
+    comments.forEach((cal, index) => {
       const isActive = index === 0 ? "active" : "";
+
+      let circles = "";
+      for (let i = 0; i < 5; i++) {
+        if (i < cal.score) {
+          circles += `<i class="fa-solid fa-circle full-circle"></i>`;
+        } else {
+          circles += `<i class="fa-solid fa-circle empty-circle"></i>`;
+        }
+      }
+
+      let commentDate = new Date(cal.dateTime);
+      let date = commentDate.getDate() + "/" + (commentDate.getMonth() + 1) + "/" + commentDate.getFullYear();
+
       calif.innerHTML += `
       <div class="carousel-item ${isActive}">
       <h3> ${cal.user} </h3>
       <p> ${cal.description} </p>
+      <p> ${date} </p>
+      <div class="cicles">${circles}</div>
       </div>
       `;
-      });
-}
+    });
+  }
 });
 
 
