@@ -209,14 +209,26 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-// calificaciones de product-info
-const CALIFICACIONES = PRODUCT_INFO_COMMENTS_URL + productId + EXT_TYPE;
+  // el operador ?? se encarga de igualar la variable al valor de la derecha en caso de que la expresion de la izquierda resulte en undefined.
+  let localComments = JSON.parse(localStorage.getItem("localComments")) ?? [];
+  let apiComments = [];
 
+  //funcion que se encarga de agregar el comentario al array de comentarios local y guardarlo en el localstorage
+  function addComment(comment) {
+    const duplicateComment = localComments.find(
+      (item) => item.user === comment.user
+    );
 
-getProductInfo(CALIFICACIONES).then(function (resultObj) {
-  if (resultObj.status === "ok") {
-    const comments = resultObj.data;
+    if (!duplicateComment) {
+      localComments.push(comment);
+      localStorage.setItem("localComments", JSON.stringify(localComments));
+    } else {
+      console.log("Duplicate found:", duplicateComment);
+    }
+  }
 
+  //funcion que se encarga de mostrar los comentarios en el HTML
+  function showComments(comments) {
     const calif = document.getElementById("comments");
 
     calif.innerText = "";
@@ -234,21 +246,41 @@ getProductInfo(CALIFICACIONES).then(function (resultObj) {
       }
 
       let commentDate = new Date(cal.dateTime);
-      let date = commentDate.getDate() + "/" + (commentDate.getMonth() + 1) + "/" + commentDate.getFullYear();
+      let date =
+        commentDate.getDate() +
+        "/" +
+        (commentDate.getMonth() + 1) +
+        "/" +
+        commentDate.getFullYear();
 
       calif.innerHTML += `
-      <div class="carousel-item ${isActive}">
-      <h3> ${cal.user} </h3>
-      <p> ${cal.description} </p>
-      <p> ${date} </p>
-      <div class="cicles">${circles}</div>
-      </div>
-      `;
+    <div class="carousel-item ${isActive}">
+    <h3> ${cal.user} </h3>
+    <p> ${cal.description} </p>
+    <p> ${date} </p>
+    <div class="cicles">${circles}</div>
+    </div>
+    `;
     });
   }
+
+  // calificaciones de product-info
+  const CALIFICACIONES = PRODUCT_INFO_COMMENTS_URL + productId + EXT_TYPE;
+
+  getProductInfo(CALIFICACIONES).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      apiComments = resultObj.data;
+      showComments([
+        ...apiComments,
+        ...localComments.filter((comment) => comment.product == productId),
+      ]);
+    }
+  });
 });
+// @flor: cuando se agregue un nuevo comentario, esto es lo que deberia hacer para que se agregue y se muestre en el HTML
 
-
-});
-
-
+// addComment(newComment);
+// showComments([
+//   ...apiComments,
+//   ...localComments.filter((comment) => comment.product == productId),
+// ])
