@@ -235,10 +235,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     comments.forEach((cal, index) => {
       const isActive = index === 0 ? "active" : "";
+
+      let circles = "";
+      for (let i = 0; i < 5; i++) {
+        if (i < cal.score) {
+          circles += `<i class="fa-solid fa-circle full-circle"></i>`;
+        } else {
+          circles += `<i class="fa-solid fa-circle empty-circle"></i>`;
+        }
+      }
+
+      let commentDate = new Date(cal.dateTime);
+      let date =
+        commentDate.getDate() +
+        "/" +
+        (commentDate.getMonth() + 1) +
+        "/" +
+        commentDate.getFullYear();
+
       calif.innerHTML += `
     <div class="carousel-item ${isActive}">
     <h3> ${cal.user} </h3>
     <p> ${cal.description} </p>
+    <p> ${date} </p>
+    <div class="cicles">${circles}</div>
     </div>
     `;
     });
@@ -256,12 +276,11 @@ document.addEventListener("DOMContentLoaded", function () {
       ]);
     }
   });
-
-  // @flor: cuando se agregue un nuevo comentario, esto es lo que deberia hacer para que se agregue y se muestre en el HTML
-
-  // addComment(newComment);
-  // showComments([
-  //   ...apiComments,
-  //   ...localComments.filter((comment) => comment.product == productId),
-  // ]);
 });
+// @flor: cuando se agregue un nuevo comentario, esto es lo que deberia hacer para que se agregue y se muestre en el HTML
+
+// addComment(newComment);
+// showComments([
+//   ...apiComments,
+//   ...localComments.filter((comment) => comment.product == productId),
+// ])

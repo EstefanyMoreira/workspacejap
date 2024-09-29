@@ -491,3 +491,10 @@ p#precio{
   #carousel{
     background-color: white;
   }
+
+  .full-circle {
+    color: #F95264;
+  }
+  .empty-circle {
+    color: #DDE7FF;
+  }
