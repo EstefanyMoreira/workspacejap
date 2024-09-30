@@ -276,6 +276,26 @@ document.addEventListener("DOMContentLoaded", function () {
       ]);
     }
   });
+
+// productos relacionados
+
+const RELACIONADOS = PRODUCT_INFO_URL + productId + EXT_TYPE;
+
+getProductInfo(RELACIONADOS).then(function (resultObj) {
+  if (resultObj.status === "ok") {
+    const product = resultObj.data.relatedProducts;
+
+    const relac = document.getElementById("related-products");
+    relac.innerHTML = ``;
+    product.forEach(product => {
+    relac.innerHTML += `
+        <div>
+        <h1>${product.name}</h1>
+        <img src="${product.image}"/>
+        </div>
+    `;
+})}
+});
 });
 // @flor: cuando se agregue un nuevo comentario, esto es lo que deberia hacer para que se agregue y se muestre en el HTML
 
