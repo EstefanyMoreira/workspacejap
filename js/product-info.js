@@ -254,11 +254,13 @@ document.addEventListener("DOMContentLoaded", function () {
         commentDate.getFullYear();
 
       calif.innerHTML += `
-    <div class="carousel-item ${isActive}">
-    <h3> ${cal.user} </h3>
+    <div class="carousel-item ${isActive} comments">
+    <div class="headComment flex-column flex-md-row flex-lg-row">
+      <p class="commentUsername"> ${cal.user} </p>
+      <div class="cicles">${circles}</div>
+    </div>
     <p> ${cal.description} </p>
-    <p> ${date} </p>
-    <div class="cicles">${circles}</div>
+    <p class="commentDate"> ${date} </p>
     </div>
     `;
     });
@@ -289,8 +291,8 @@ getProductInfo(RELACIONADOS).then(function (resultObj) {
     relac.innerHTML = ``;
     product.forEach(product => {
     relac.innerHTML += `
-        <div>
-        <h1>${product.name}</h1>
+        <div class="col-12 col-md-6 col-lg-4 card">
+        <h5><strong>${product.name}</strong></h5>
         <img src="${product.image}"/>
         </div>
     `;

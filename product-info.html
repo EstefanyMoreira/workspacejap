@@ -56,15 +56,15 @@
 
     <div class="carouselandForm row" id = "seccion_comentarios">
    
-<div class="col-6">
+<div class="col-12 col-lg-6 order-2 order-lg-1">
       <div id="carousel" class="carousel slide " data-bs-ride="carousel">
         <div id="comments" class="carousel-inner"></div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
           <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
           <span class="visually-hidden">Next</span>
       </button>
     
@@ -74,7 +74,7 @@
           <!--Form -->
 
 
-        <div class="col-6">
+        <div class="col-12 col-lg-6 order-1 order-lg-2">
 
           
         <form action="/ruta-para-enviar-comentarios"  method="post" id="enviar_comentarios">
@@ -93,13 +93,17 @@
         </select>
       </div>
 
-        <textarea id="comentarios" name="comentarios" class="col-12"  rows="4" cols="50" placeholder="Escribe tu resena aquí..."></textarea><br>
+        <textarea id="comentarios" name="comentarios" class="col-12"  rows="4" cols="50" placeholder="Escribe tu resena aquí..."></textarea>
         <button type="submit" class="btnRojo">Enviar</button>
     </form>
         </div>
-       
-        <div id="related-products"></div>
-        
+    </div>
+
+        <div class="related row">
+          <div class="row"><h5 class="col-12"><strong> Productos relacionados: </strong></h5></div>
+          <div id="related-products" class="row"></div>
+        </div>
+
   </main>
 
 
