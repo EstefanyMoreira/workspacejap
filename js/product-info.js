@@ -209,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+
   // el operador ?? se encarga de igualar la variable al valor de la derecha en caso de que la expresion de la izquierda resulte en undefined.
   let localComments = JSON.parse(localStorage.getItem("localComments")) ?? [];
   let apiComments = [];
@@ -216,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //funcion que se encarga de agregar el comentario al array de comentarios local y guardarlo en el localstorage
   function addComment(comment) {
     const duplicateComment = localComments.find(
-      (item) => item.user === comment.user
+      (item) => item.user === comment.user && item.product === comment.product
     );
 
     if (!duplicateComment) {
@@ -279,6 +280,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
+// Para agregar commentarios:
+// Llamo al botón de enviar comentarios y le pido que detecte el evento submit de envio de forms
+
+document.getElementById('enviar_comentarios').addEventListener('submit', function(event) {
+
+  // Este metodo lo que hace es evitar que un formulario se envíe automáticamente y la página se recargue
+  // pemrite manejar los datos primero. sin esto no funciona nada y da error http 405
+  event.preventDefault()
+
+  // Capturar datos del formulario
+  // tomo el user del local storage con su clave 
+
+  let user = localStorage.getItem("user")
+
+  //defino un comentario nuevo para que use la funcion addcomments
+  
+  const newComment = {
+    user: user,
+    description: document.getElementById('comentarios').value,
+    score: parseInt(document.getElementById('calificacion').value) ,
+    product: productId,
+    dateTime: new Date().toISOString(), // Timestamp actual
+  };
+
+  // Ahora si, agregar el comentario y mostrar los comentarios actualizados
+  
+  addComment(newComment);
+  showComments([
+    ...apiComments,
+    ...localComments.filter((comment) => comment.product === productId),
+  ]);
+
+  // limpiar el texto en el formulario
+  document.getElementById('enviar_comentarios').reset();
+});
+
+
+
+
+
 // productos relacionados
 
 const RELACIONADOS = PRODUCT_INFO_URL + productId + EXT_TYPE;
@@ -299,6 +341,7 @@ getProductInfo(RELACIONADOS).then(function (resultObj) {
 })}
 });
 });
+
 // @flor: cuando se agregue un nuevo comentario, esto es lo que deberia hacer para que se agregue y se muestre en el HTML
 
 // addComment(newComment);
