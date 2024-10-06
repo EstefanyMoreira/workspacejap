@@ -86,7 +86,7 @@ body {
     
     }
     
-.product-item {
+.product {
     color: #1C0E34 ;  
     cursor: pointer;   
     display: flex;        
@@ -401,7 +401,10 @@ p#precio{
         padding: 0 8% 4% 8%;
       }
 
-   
+      #related-products {
+        justify-content: center;
+        gap: 0%;
+      }
 }
 
 /* Tableta en Modo Vertical */
@@ -623,12 +626,16 @@ textarea {
     gap: 5%;
 }
 
-#related-products img{
-    border-radius: 15px;
-    width: 100%;
+#related-products div{
+    padding: 0%;
+    border-width: 3px;
+    text-align: center;
 }
 
-#related-products div{
-    padding: 3%;
-    border-width: 3px;
+.card-body {
+    padding: 5% !important;
+}
+
+.card {
+    overflow: hidden;
 }

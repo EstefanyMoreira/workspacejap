@@ -132,22 +132,6 @@ sortButtonRelevance.addEventListener("click", (event) => {
   sortProducts("relevancia");
 });
 
-// Guarda en localStorage la ID del producto seleccionado y redirige a la página product-info.html
-function selectedProducts() {
-  let productItem = document.querySelectorAll(".product-item");
-
-  productItem.forEach(function (products) {
-    products.addEventListener("click", function () {
-      let idP = products.getAttribute("data-product-id");
-
-      localStorage.setItem("productID", idP);
-      window.location.href = "product-info.html";
-    });
-  });
-}
-// En la línea 13 del código se agregó el atributo data-product-id.
-// El prefijo data- permite crear atributos personalizados.
-// Son útiles para almacenar datos que se puedan usar en JS sin interferir con la estructura HTML.
 
 // Función para filtrar productos según lo que se escriba en la barra de búsqueda
 function searchProduct(){
