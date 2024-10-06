@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       productsContainer.innerHTML = `
-                <div class="product-item" data-product-id="${product.id}">
+                <div class="product" data-product-id="${product.id}">
                     <div class="row">
                 
                  <div class="col-lg-6  col-md-12 col-sm-12 cont_img">
@@ -308,10 +308,17 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
 
   // limpiar el texto en el formulario
   document.getElementById('enviar_comentarios').reset();
+  
+  // deja los círculos sin color y limpia la calificación
+  let circles = document.querySelectorAll('#calificacion-container i');
+  circles.forEach(function(circle) {
+    circle.classList.replace('full-circle', 'empty-circle');
+  });
+  document.getElementById('calificacion').value = '';
 });
 
 
-// Circulos para los comentarios que se envian
+// Círculos para los comentarios que se envian
 const circles = document.querySelectorAll("#calificacion-container i");
 const hiddenInput = document.getElementById("calificacion");
 
