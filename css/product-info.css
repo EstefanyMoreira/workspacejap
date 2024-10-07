@@ -250,7 +250,10 @@ p#precio{
     }
 
     #btnBlockRojo {
-        justify-content: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .btnRojo {

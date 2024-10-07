@@ -288,12 +288,18 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
 
   let user = localStorage.getItem("user")
 
+  let commentText = document.getElementById("comentarios").value;
+  let commentVote = document.getElementById("calificacion").value;
+
+  // Verifica que el comentario y la calificacion tengan valor, si alguno de los dos está vacío, se muestra una alerta
+  if (commentText && commentVote){
+
   //defino un comentario nuevo para que use la funcion addcomments
   
   const newComment = {
     user: user,
-    description: document.getElementById('comentarios').value,
-    score: parseInt(document.getElementById('calificacion').value) ,
+    description: commentText,
+    score: parseInt(commentVote) ,
     product: productId,
     dateTime: new Date().toISOString(), // Timestamp actual
   };
@@ -311,10 +317,16 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
   
   // deja los círculos sin color y limpia la calificación
   let circles = document.querySelectorAll('#calificacion-container i');
+
   circles.forEach(function(circle) {
     circle.classList.replace('full-circle', 'empty-circle');
   });
+
   document.getElementById('calificacion').value = '';
+
+} else {
+  alert("Por favor, completa todos los campos antes de enviar tu calificación")
+}
 });
 
 
