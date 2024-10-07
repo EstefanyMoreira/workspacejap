@@ -16,6 +16,7 @@ function showProductList(array) {
     </div>
     
     <div class="bloque_madre col-lg-6 col-md-6 col-sm-12">
+      <div>
         <div class="nameButton col-12">
             <h4>` + product.name + `</h4> 
             <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
@@ -25,12 +26,17 @@ function showProductList(array) {
 
         <div class="col-12">
             <p class="description">` + product.description + `</p>
+        </div>
+      </div>
+
+        <div>
+        <div class="sold">
             <small>` + product.soldCount + ` vendidos</small>
         </div>
-
         <div class="bloqueGrande">
             <p id="precio">` + product.currency + ` ` + product.cost + `</p>
             <button type="button" class="btnRojo" value="comprar">Comprar</button>
+        </div>
         </div>
     </div>
 </div>
