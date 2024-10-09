@@ -86,7 +86,7 @@ body {
     
     }
     
-.product-item {
+.product {
     color: #1C0E34 ;  
     cursor: pointer;   
     display: flex;        
@@ -250,7 +250,10 @@ p#precio{
     }
 
     #btnBlockRojo {
-        justify-content: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .btnRojo {
@@ -401,7 +404,10 @@ p#precio{
         padding: 0 8% 4% 8%;
       }
 
-   
+      #related-products {
+        justify-content: center;
+        gap: 0%;
+      }
 }
 
 /* Tableta en Modo Vertical */
@@ -623,12 +629,64 @@ textarea {
     gap: 5%;
 }
 
-#related-products img{
-    border-radius: 15px;
-    width: 100%;
+#related-products div{
+    padding: 0%;
+    border-width: 3px;
+    text-align: center;
 }
 
-#related-products div{
-    padding: 3%;
-    border-width: 3px;
+.card-body {
+    padding: 5% !important;
 }
+
+.card {
+    overflow: hidden;
+}
+
+.perfil {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .perfil svg {
+    cursor: pointer;
+    filter: invert(1);
+    opacity: 55%;
+  }
+  .perfil svg:hover {
+    opacity: 100%;
+  }
+  
+  #miPerfil {
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 150px;
+    right: 0;
+    top: 50px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown-menu a {
+    text-decoration: none;
+    color: inherit;
+  }
