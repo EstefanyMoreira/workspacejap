@@ -54,25 +54,7 @@ guardar.addEventListener("click", () => {
 )
 
 
-// cargar y mostrar imagen del perfil 
 
-function cargarImagen(event) {
-    const archivo = event.target.files[0]; // Obtener el archivo seleccionado
-
-    if (archivo) {
-        const reader = new FileReader();
-        
-        // Convertir la imagen a Base64
-        reader.onload = function(e) {
-            const imagenBase64 = e.target.result;
-            localStorage.setItem("imagenPerfil", imagenBase64); // Guardar en localStorage
-            alert("Imagen guardada con éxito.");
-            mostrarImagen(); // Mostrar la imagen inmediatamente después de guardarla
-        };
-
-        reader.readAsDataURL(archivo); // Leer el archivo como URL de datos
-    }
-}
 
 // Función para mostrar la imagen guardada
 
