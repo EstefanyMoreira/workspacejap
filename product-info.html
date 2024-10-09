@@ -79,18 +79,18 @@
           
         <form action="/ruta-para-enviar-comentarios"  method="post" id="enviar_comentarios">
 
-          <div class="primeraLinea ">
+          <div class="primeraLinea col-12">
 
-            <p class="resenaEnviar ">Comparte tu reseña</p> 
+            <p class="resenaEnviar col-6 col-lg-8">Comparte tu reseña</p> 
 
-          <select id="calificacion"  name="calificacion" required>
-            <option value=""> Califica tu compra:</option>
-            <option value="1">1 - Muy Mala</option>
-            <option value="2">2 - Mala</option>
-            <option value="3">3 - Buena</option>
-            <option value="4">4 - Muy Buena</option>
-            <option value="5">5- Excelente</option>
-        </select>
+          <div id="calificacion-container" name="calificacion">
+            <i class="fa-solid fa-circle empty-circle" data-value="1"></i>
+            <i class="fa-solid fa-circle empty-circle" data-value="2"></i>
+            <i class="fa-solid fa-circle empty-circle" data-value="3"></i>
+            <i class="fa-solid fa-circle empty-circle" data-value="4"></i>
+            <i class="fa-solid fa-circle empty-circle" data-value="5"></i>
+            <input type="hidden" id="calificacion" name="calificacion" value="">
+        </div>
       </div>
 
         <textarea id="comentarios" name="comentarios" class="col-12"  rows="4" cols="50" placeholder="Escribe tu resena aquí..."></textarea>
@@ -100,7 +100,7 @@
     </div>
 
         <div class="related row">
-          <div class="row"><h5 class="col-12"><strong> Productos relacionados: </strong></h5></div>
+          <div class="row"><h6 class="col-12"><strong> También puede interesarte: </strong></h6></div>
           <div id="related-products" class="row"></div>
         </div>
 

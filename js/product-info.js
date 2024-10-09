@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       productsContainer.innerHTML = `
-                <div class="product-item" data-product-id="${product.id}">
+                <div class="product" data-product-id="${product.id}">
                     <div class="row">
                 
                  <div class="col-lg-6  col-md-12 col-sm-12 cont_img">
@@ -133,14 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
              </div>
                     
-              
-            </div class="row"> 
-                <div class=" col-lg-12 col-md-12 col-sm-12 imagenesrel">
-                    <p class="relat">Imágenes relacionadas</p>
-                    <div class= "col-12">
-                    ${imagesHtml}
-                </div>
-              </div>
             `;
       // se llaman las funciones para mostrar datos de la página actual en el breadcrumb
       const categoryName = product.category;
@@ -250,9 +242,10 @@ document.addEventListener("DOMContentLoaded", function () {
       let date =
         commentDate.getDate() +
         "/" +
-        (commentDate.getMonth() + 1) +
+        (commentDate.getMonth() + 1).toString().padStart(2, "0") +
         "/" +
         commentDate.getFullYear();
+      // padStart() rellena el string con ceros al principio si es necesario, de manera que el string tenga una longitud de 2 caracteres.
 
       calif.innerHTML += `
     <div class="carousel-item ${isActive} comments">
@@ -295,12 +288,18 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
 
   let user = localStorage.getItem("user")
 
+  let commentText = document.getElementById("comentarios").value;
+  let commentVote = document.getElementById("calificacion").value;
+
+  // Verifica que el comentario y la calificacion tengan valor, si alguno de los dos está vacío, se muestra una alerta
+  if (commentText && commentVote){
+
   //defino un comentario nuevo para que use la funcion addcomments
   
   const newComment = {
     user: user,
-    description: document.getElementById('comentarios').value,
-    score: parseInt(document.getElementById('calificacion').value) ,
+    description: commentText,
+    score: parseInt(commentVote) ,
     product: productId,
     dateTime: new Date().toISOString(), // Timestamp actual
   };
@@ -315,13 +314,43 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
 
   // limpiar el texto en el formulario
   document.getElementById('enviar_comentarios').reset();
+  
+  // deja los círculos sin color y limpia la calificación
+  let circles = document.querySelectorAll('#calificacion-container i');
+
+  circles.forEach(function(circle) {
+    circle.classList.replace('full-circle', 'empty-circle');
+  });
+
+  document.getElementById('calificacion').value = '';
+
+} else {
+  alert("Por favor, completa todos los campos antes de enviar tu calificación")
+}
 });
 
 
+// Círculos para los comentarios que se envian
+const circles = document.querySelectorAll("#calificacion-container i");
+const hiddenInput = document.getElementById("calificacion");
 
+circles.forEach((circle, index) => {
+  circle.addEventListener("click", () => {
+    
+    hiddenInput.value = circle.getAttribute("data-value");// Actualiza input oculto con el valor del círculo seleccionado
+    
+    // Cambia visualmente los círculos
+    circles.forEach((c, i) => {
+      if (i <= index) {
+        c.classList.replace("empty-circle", "full-circle");
+      } else {
+        c.classList.replace("full-circle", "empty-circle");
+      }
+    });
+  });
+});
 
-
-// productos relacionados
+// Productos relacionados
 
 const RELACIONADOS = PRODUCT_INFO_URL + productId + EXT_TYPE;
 
@@ -333,19 +362,13 @@ getProductInfo(RELACIONADOS).then(function (resultObj) {
     relac.innerHTML = ``;
     product.forEach(product => {
     relac.innerHTML += `
-        <div class="col-12 col-md-6 col-lg-4 card">
-        <h5><strong>${product.name}</strong></h5>
-        <img src="${product.image}"/>
+        <div class="col-5 col-md-5 col-lg-4 card product-item" data-product-id="${product.id}">
+          <img src="${product.image}" class="card-img-top"/>
+        <div class="card-body">
+          <h6><strong>${product.name}</strong></h6>
+        </div>
         </div>
     `;
-})}
+  })} selectedProducts();
 });
 });
-
-// @flor: cuando se agregue un nuevo comentario, esto es lo que deberia hacer para que se agregue y se muestre en el HTML
-
-// addComment(newComment);
-// showComments([
-//   ...apiComments,
-//   ...localComments.filter((comment) => comment.product == productId),
-// ])

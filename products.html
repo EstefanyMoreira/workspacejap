@@ -60,43 +60,44 @@
 
     <div class="controles row">
       <div class="input row">
+        <div class="col-lg-12 col-md-12 col-sm-6 text-end">
+          <input
+            class="col-11 col-lg-3 col-md-5 col-sm-6"
+            type="search"
+            placeholder="buscar..."
+            id="searchBar"
+          />
 
-      <div class="col-lg-12 col-md-12 col-sm-6  text-end">
+          <input
+            class="col-lg-2 col-md-2 col-sm-2"
+            type="type"
+            name="preciomin"
+            placeholder="precio mínimo"
+            id="preciomin"
+          />
 
-      <input class="col-lg-3 col-md-3 col-sm-6" type="search" placeholder="buscar..." id="searchBar">
-      
-      
-      <input class=" col-lg-2 col-md-2 col-sm-2"
-        type="type"
-        name="preciomin"
-        placeholder="precio mínimo"
-        id="preciomin"/>
+          <input
+            class="col-lg-2 col-md-2 col-sm-2"
+            type="type"
+            name="preciomax"
+            placeholder="precio máximo"
+            id="preciomax"
+          />
+        </div>
 
-      <input   
-     
-      class="col-lg-2 col-md-2 col-sm-2"
-      type="type"
-        name="preciomax"
-        placeholder="precio máximo"
-        id="preciomax" />
-
+        <div class="botones text-end">
+          <button name="filtrar" type="button" id="filtrarbtn">Filtrar</button>
+          <button id="price-up">
+            <i class="fa-solid fa-arrow-up-short-wide"></i>$
+          </button>
+          <button id="price-down">
+            <i class="fa-solid fa-arrow-down-wide-short"></i>$
+          </button>
+          <button id="relevance">
+            <i class="fa-solid fa-arrow-down-wide-short"></i>Rel
+          </button>
+        </div>
       </div>
-
-
-        <div class=" botones text-end">
-      <button name="filtrar" type="button" id="filtrarbtn">Filtrar</button>
-      <button id="price-up">
-        <i class="fa-solid fa-arrow-up-short-wide"></i>$
-      </button>
-      <button id="price-down">
-        <i class="fa-solid fa-arrow-down-wide-short"></i>$
-      </button>
-      <button id="relevance">
-        <i class="fa-solid fa-arrow-down-wide-short"></i>Rel
-      </button>
-    </div>
-  </div>
-
     </div>
 
     <main class="pb-5 container">
