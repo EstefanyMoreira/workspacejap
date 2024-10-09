@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //funcion que se encarga de agregar el comentario al array de comentarios local y guardarlo en el localstorage
   function addComment(comment) {
     const duplicateComment = localComments.find(
-      (item) => item.user === comment.user
+      (item) => item.user === comment.user && item.product === comment.product
     );
 
     if (!duplicateComment) {
@@ -315,7 +315,7 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
 
   // limpiar el texto en el formulario
   document.getElementById('enviar_comentarios').reset();
-
+});
 
 
 
@@ -339,7 +339,6 @@ getProductInfo(RELACIONADOS).then(function (resultObj) {
         </div>
     `;
 })}
-});
 });
 });
 
