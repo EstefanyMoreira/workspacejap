@@ -236,3 +236,8 @@ a.custom-card:hover {
   text-decoration: none;
   color: inherit;
 }
+
+body.modo-noche{
+  background-color: rgb(43, 38, 38);
+  color: white;
+}
