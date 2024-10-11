@@ -108,3 +108,32 @@ let logout = document.getElementById("logout");
 logout.addEventListener("click", () => {
   localStorage.removeItem("user");
 });
+
+// Función para aplicar el modo día/noche
+function aplicarModo(modo) {
+  document.body.classList.toggle('modo-noche', modo === 'noche');
+  document.querySelector(`input[name="modo"][value="${modo}"]`).checked = true;
+}
+
+// Mostrar el modo guardado al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+  const datosGuardados = JSON.parse(localStorage.getItem("datosFormulario"));
+  if (datosGuardados) {
+    aplicarModo(datosGuardados.modo);
+  }
+});
+
+// Guarda modo en el LocalStorage
+function guardarDatos() {
+  let modo = document.querySelector('input[name="modo"]:checked').value;
+
+  const datos = { modo };
+  localStorage.setItem("datosFormulario", JSON.stringify(datos));
+
+  aplicarModo(modo);
+}
+
+let radioButtons = document.querySelectorAll('input[name="modo"]');
+radioButtons.forEach(radio => {
+  radio.addEventListener('click', guardarDatos);
+});
