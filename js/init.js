@@ -128,7 +128,7 @@ function guardarDatos() {
   let modo = document.querySelector('input[name="modo"]:checked').value;
 
   const datos = { modo };
-  localStorage.setItem("datosFormulario", JSON.stringify(datos));
+  localStorage.setItem("modo", JSON.stringify(datos));
 
   aplicarModo(modo);
 }
