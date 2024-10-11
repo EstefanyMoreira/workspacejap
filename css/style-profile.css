@@ -1,0 +1,131 @@
+h4 {
+    color: #1c0e34;
+    font-weight: 700;
+}
+
+small {
+    color: #8A8888;
+    font-size: small;
+}
+
+#profile-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 10% 0 10%;
+    height: 100%;
+}
+
+.right-section, .left-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 2%;
+    padding: 2%;
+    row-gap: 1.8em;
+}
+
+.left-section {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Botones */
+.botones, #file-label {
+    color: #ffffff; 
+    font-weight: 700;  
+    border: none;
+    transition: background-color 0.5s ease;
+}
+
+.btnRadio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnRojo{
+    background: #e83b57 !important;
+    width: 100%;
+}
+
+.btnAzul{
+    background: #1c0e34 !important;
+}
+
+.right-section input, #file-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 2.5rem;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.right-section input[type="text"] {
+    background-color: #E4ECFF;
+    border-style: none;
+    padding-left: 2%;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.right-section input[type="file"]{
+    display: none;
+}
+
+#file-label {
+    margin-top: 1%;
+}
+
+#modo {
+    width: 100%;
+    padding: 5%;
+    background-color: #E4ECFF;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
+}
+
+
+/* imagenes */
+#imgPerfil {
+    background-color: #e4e6e7;
+    width: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover; 
+}
+
+.imagenP {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+/*tablet*/
+@media (min-width: 768px) and (max-width: 1023px) {
+    #profile-form {
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin: 0 10% 0 10%;
+        height: 100%;
+    }
+    .right-section .row {
+        align-items: flex-end;
+    }
+}
+
+/*Iphone*/
+@media (max-width: 767px) {
+    .right-section {
+        row-gap: 0;
+    }
+
+    .right-section div div {
+        margin-bottom: 1em;
+    }
+}

@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>eMercado - Todo lo que busques está aquí</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-   
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/style-profile.css" rel="stylesheet">
   
 </head>
 
@@ -29,15 +15,8 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
       <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -51,57 +30,112 @@
             <li class="nav-item">
               <a class="nav-link" href="sell.html">Vender</a>
             </li>
-            <li class="nav-item"></li>
-            <div class="perfil">
-              <a class="nav-link" id="miPerfil" href="#">Perfil</a>
-            </div>
           </ul>
         </div>
+        <div class="perfil">
+          <a class="nav-link" id="miPerfil" href="#">Perfil</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   <main>
    <!--Formulario comienzo-->
 
-   <form action="">
-    <label name="nombre">Nombre:</label>
-    <input id="nombre" type="text" name="nombre" required />
+   <form action="" class="form row" id="profile-form">
 
-    <label name="segundo_nombre">Segundo nombre:</label>
-    <input id="segundo_nombre" type="text" name="segundo_nombre"/>
+    <section class="right-section col-12 col-lg-7 col-md-8 order-2">
 
-    <label name="apellido">Apellido:</label>
-    <input id="apellido" type="text" name="apellido" required/>
+      <div class="row">
+        <small>Mi Perfil > Información personal</small>
+        <h4>Información personal</h4>
+      </div>
 
-    <label name="segundo_apellido">Segundo apellido:</label>
-    <input id="segundo_apellido" type="text" name="segundo_apellido"/>
+      <div class="row">
+        <div class="col-12 col-lg-6 col-md-6">
+          <label name="nombre" class="col-12">Nombre:</label>
+          <input id="nombre" type="text" name="nombre" class="col-10" required />
+        </div>
+    
+        <div class="col-12 col-lg-6 col-md-6">
+          <label name="segundo_nombre" class="col-12">Segundo nombre:</label>
+          <input id="segundo_nombre" type="text" name="segundo_nombre" class="col-10"/>
+        </div>
+      </div>
+      
+      <div class="row ">
+        <div class="col-12 col-lg-6 col-md-6">
+          <label name="apellido" class="col-12">Apellido:</label>
+          <input id="apellido" type="text" name="apellido" class="col-10" required/>
+        </div>
+        
+        <div class="col-12 col-lg-6 col-md-6">
+          <label name="segundo_apellido" class="col-12">Segundo apellido:</label>
+          <input id="segundo_apellido" type="text" name="segundo_apellido" class="col-10"/>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-12">
+          <label name="email" class="col-12">E-mail:</label>
+          <input id="email" type="text" name="email" class="col-11" required />
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 col-lg-6 col-md-6">
+          <label name="telefono_contacto" class="col-12">Telefono de contacto:</label>
+          <input id="telefono_contacto" type="text" name="telefono_contacto" class="col-10"/>
+        </div>
 
-    <label name="email">E-mail:</label>
-    <input id="email" type="text" name="email" required />
 
-    <label name="telefono_contacto">Telefono de contacto:</label>
-    <input id="telefono_contacto" type="text" name="telefono_contacto"/>
+      <!--Foto de perfil-->
+        <div class="col-12 col-lg-6 col-md-6">
+          <label name="imagen" class="col-12">Selecciona una foto de perfil:</label>
+            <label for="imagen" id="file-label" class="btnAzul botones col-12">Elegir archivo</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" class="col-10">
+          </div>
+      </div>
 
-
-    <!--Foto de perfil-->
-
-    <label for="imagen">Selecciona una foto de perfil:</label>
-    <input type="file" id="imagen" name="imagen" accept="image/*">
-
-
-
-    <!--Seleccion de modo -->
-
-    <input type="radio" name="modo" id="modo_dia" value="dia" checked />
-    <label for="modo_dia">Modo Dia</label>
-
-    <input type="radio" name="modo" id="modo_noche" value="noche" />
-    <label for="modo_noche">Modo Noche</label>
+      <div class="row">
+        <div class="col-12 col-lg-6 col-md-12">
+          <input type="submit" id="guardarBtn" value="Guardar preferencias" class="btnRojo botones col-12 col-lg-10"/>
+        </div>
+      </div>
 
 
-    <input type="submit" id="guardarBtn" value="Guardar preferencias" />
+    </section>
 
 
+    <section class="left-section col-12 col-lg-3 col-md-4 order-1">
+
+      <div class="col-12 col-md-4 imagenP">
+        <img src="img/img_perfil.png" id="imgPerfil">
+      </div>
+      <!--Seleccion de modo -->
+      <div id="modo" class="col-12 col-md-4">
+        <div class="row">
+          <label>Selecciona un tema:</label>
+        </div>
+        <div class="row">
+          <div class="col-2 btnRadio">
+            <input type="radio" name="modo" id="modo_dia" value="dia" checked />
+          </div>
+          <div class="col-10">
+            <label for="modo_dia">Modo Dia</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-2 btnRadio">
+            <input type="radio" name="modo" id="modo_noche" value="noche" />
+          </div>
+          <div class="col-10"> 
+            <label for="modo_noche">Modo Noche</label>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
 
   </form>
   </main>
