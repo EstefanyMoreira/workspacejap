@@ -9,6 +9,7 @@ function guardarDatos() {
     let email = document.getElementById("email").value;
     let telefono_contacto = document.getElementById("telefono_contacto").value;
     let fotoPerfil = document.getElementById("imagen").files[0];
+    let modo =document.querySelector(`input[name="modo"][value="${modo}"]`).checked = true;
     // validar campos requeridos
     if (!nombre || !email || !apellido) {
         alert("Por favor, complete todos los campos obligatorios.");  
@@ -16,7 +17,7 @@ function guardarDatos() {
     }
 
     // guardar en el localStorage
-    const datos = { nombre, segundo_nombre, apellido, segundo_apellido, email, telefono_contacto };
+    const datos = { nombre, segundo_nombre, apellido, segundo_apellido, email, telefono_contacto, modo };
     localStorage.setItem("datosFormulario", JSON.stringify(datos));
     localStorage.setItem("loggeado", true);
     localStorage.setItem("email", email);
