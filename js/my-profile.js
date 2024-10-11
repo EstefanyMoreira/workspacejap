@@ -9,7 +9,8 @@ function guardarDatos() {
     let email = document.getElementById("email").value;
     let telefono_contacto = document.getElementById("telefono_contacto").value;
     let fotoPerfil = document.getElementById("imagen").files[0];
-    let modo =document.querySelector(`input[name="modo"][value="${modo}"]`).checked = true;
+    let modo = document.querySelector('input[name="modo"]:checked').value;
+    
     // validar campos requeridos
     if (!nombre || !email || !apellido) {
         alert("Por favor, complete todos los campos obligatorios.");  

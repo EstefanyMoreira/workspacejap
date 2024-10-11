@@ -117,7 +117,7 @@ function aplicarModo(modo) {
 
 // Mostrar el modo guardado al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
-  const datosGuardados = JSON.parse(localStorage.getItem("datosFormulario"));
+  const datosGuardados = JSON.parse(localStorage.getItem("modo"));
   if (datosGuardados) {
     aplicarModo(datosGuardados.modo);
   }
