@@ -285,7 +285,18 @@ a.custom-card:hover {
   }
 }
 
-body.modo-noche{
-  background-color: rgb(43, 38, 38);
-  color: white;
+/* Paleta por defecto (modo día) */
+:root {
+  --color-fondo: #ffffff;
+  --color-primario: #1c0e34;
+  --color-boton-azul: #1c0e34;
+  --color-boton-azul-hover: #31195c;
+}
+
+/* Paleta para el modo noche */
+body.modo-noche {
+  --color-fondo: #1c0e34;
+  --color-primario: #f1f1f1;
+  --color-boton-azul: #2E77D7;
+  --color-boton-azul-hover: #0056b3;
 }
