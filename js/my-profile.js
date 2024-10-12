@@ -78,5 +78,8 @@ function cargarImagen(event) {
     }
 }
 
-
-
+// Feedback de imagen cargada
+document.getElementById('imagen').addEventListener('change', function() {
+    const feedbackValid = document.getElementById('valid-feedback-img');
+    feedbackValid.style.display = 'block';
+});
