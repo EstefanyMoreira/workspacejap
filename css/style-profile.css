@@ -89,7 +89,7 @@ small {
 .right-section input[type="text"], .right-section input[type="email"] {
     background-color: #E4ECFF;
     border-style: none;
-    padding-left: 7%;
+    padding-left: 2%;
     width: 100%;
     margin-top: 1%;
 }
