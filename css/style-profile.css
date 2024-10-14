@@ -40,7 +40,7 @@ small {
 }
 
 /* Botones */
-.botones, #file-label {
+.botones {
     color: #ffffff; 
     font-weight: 700;  
     border: none;
@@ -73,7 +73,30 @@ small {
 
 #file-label {
     margin-top: 1%;
-    cursor: pointer;
+}
+
+/*Colores en el input radio*/
+.form-check {
+    padding-left: 2.5em;
+}
+
+.form-check-input.is-valid, .was-validated .form-check-input:valid {
+    background-color: var(--color-fondo);
+}
+
+.form-check-input.is-valid:checked, .was-validated .form-check-input:valid:checked {
+    background-color: var(--color-fondo);
+}
+.form-check-input.is-valid:checked, .was-validated .form-check-input:valid:checked {
+    background-color: var(--color-fondo);
+}
+
+.form-check-input:checked[type=radio] {
+    background-image: var(--radio-btn-azul)
+}
+.form-check-input.is-valid, .was-validated .form-check-input:valid {
+    border-color: var(--color-fondo-invertidos);
+    border-width: 2px;
 }
 
 /*inputs*/
@@ -89,30 +112,37 @@ small {
 .right-section input[type="text"], .right-section input[type="email"] {
     background-color: #E4ECFF;
     border-style: none;
-    padding-left: 2%;
     width: 100%;
+    padding: .375rem .75rem;
     margin-top: 1%;
+}
+
+input[type="text"]:valid:focus {
+    border-color: var(--color-boton-azul);
+    outline: none;
+    box-shadow: 0 0 0 .15em var(--color-boton-azul);
 }
 
 .right-section input[type="file"]{
     display: none;
 }
+
 /* modificaciones de feedback de campos para que vayan con el estilo*/
-
+.form-control.is-valid, .was-validated .form-control:valid {
+    background-image: var(--check-valido);
+}
 .form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+    border-color: var(--color-boton-azul);
+    box-shadow: 0 0 0 .15em var(--color-boton-azul);
+}
 
-        border-color: #2ef799;
-        box-shadow: 0 0 0 .10rem rgb(30 204 152);
-    }
-
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23ea4f55'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23ea4f55' stroke='none'/%3e%3c/svg%3e");
+}
 .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
-        border-color: #ea4f55;
-        box-shadow: 0 0 0 .10rem rgba(234, 79, 85);}
-
- input:focus {
-            border: 6px solid #f4f5f7; /* Cambia el color y el grosor del borde */
-            outline: none; /* Elimina el contorno por defecto */
-        }
+    border-color: #ea4f55;
+    box-shadow: 0 0 0 .15em #ea4f55;
+}
 
 /*feedback sobre el archivo cargado*/
 #valid-feedback-img {
