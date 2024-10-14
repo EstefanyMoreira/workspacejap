@@ -97,6 +97,22 @@ small {
 .right-section input[type="file"]{
     display: none;
 }
+/* modificaciones de feedback de campos para que vayan con el estilo*/
+
+.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+
+        border-color: #2ef799;
+        box-shadow: 0 0 0 .10rem rgb(30 204 152);
+    }
+
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+        border-color: #ea4f55;
+        box-shadow: 0 0 0 .10rem rgba(234, 79, 85);}
+
+ input:focus {
+            border: 6px solid #f4f5f7; /* Cambia el color y el grosor del borde */
+            outline: none; /* Elimina el contorno por defecto */
+        }
 
 /*feedback sobre el archivo cargado*/
 #valid-feedback-img {
