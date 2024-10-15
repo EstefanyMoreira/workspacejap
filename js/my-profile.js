@@ -53,14 +53,22 @@ function guardarDatos() {
         const reader = new FileReader();
         reader.onload = function(e) {
             const imagenBase64 = e.target.result;
+            document.getElementById('fotoPerfil').src = imagenBase64;
              // guardar la imagen en Base64
             localStorage.setItem("imagenPerfil", imagenBase64);
         };
          // leer el archivo como URL de datos
         reader.readAsDataURL(fotoPerfil);
     }
+    
 
     alert("Datos guardados con exito");  
+}
+
+const imagenGuardada = localStorage.getItem("imagenPerfil");
+if (imagenGuardada) {
+    document.getElementById('fotoPerfil').src = imagenGuardada;
+    document.getElementById('imgPerfil').src = imagenGuardada;
 }
 
 // mostrar el email guardado en el local al cargar la p[agina
