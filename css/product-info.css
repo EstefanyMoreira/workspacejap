@@ -62,7 +62,7 @@ body {
    }
 
 .bloque_madre {  /*bloque contenedor de todo*/
-    background-color: #ffffff;
+    background-color: var(--color-fondo);
     margin-top: 0;
     padding: 5%;
     padding-bottom: 5%;  
@@ -96,15 +96,18 @@ body {
     h4{
         font-size: 1.5rem;
         font-weight: 700; 
-        color:#1C0E34;
+        color:var(--color-fondo-invertidos);
         padding-top: none;
         }
 
      p, small{
         font-size: 0.8rem;
         font-weight: 400;
-        color: #1C0E34;
+
             }
+    small {
+      color: var(--color-fondo-invertidos);
+    }
 
 .bloque_color {    /*contiene descripcion de producto */
 
@@ -144,7 +147,7 @@ body {
 p#precio{
     font-size: 2rem;
     font-weight: 700; 
-    color:#1C0E34;
+    color: var(--color-fondo-invertidos);
     }
 
     .img_rel {
@@ -443,7 +446,8 @@ p#precio{
   }
 
   #carousel{
-    background-color: white;
+    background-color: var(--color-fondo-celeste);
+    color: var(--color-secundario);
   }
 
   /*Seccion de comentarios*/ 
@@ -456,7 +460,7 @@ p#precio{
   }
   
   .fa-chevron-left, .fa-chevron-right {
-    color: #1C0E34;
+    color: var(--color-fondo-invertidos);
   }
 
   .carousel-control-next, .carousel-control-prev {
@@ -471,7 +475,7 @@ p#precio{
 
   #carousel, .card{
       padding: 5%;
-      border-radius: 30px;
+      border-radius: 25px;
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
       margin-bottom: 5%;
       border-color: #E4ECFF;
@@ -515,13 +519,16 @@ p#precio{
     
     display: flex;
 
+}
 
+#relatedP {
+  color: var(--color-fondo-invertidos);
 }
 
   #seccion_comentarios, .related {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-color: var(--color-fondo);
     padding: 3%;
     
   }
@@ -534,6 +541,7 @@ p#precio{
   .primeraLinea {
     display: flex;
     justify-content: space-between;
+    color: var(--color-secundario);
     
   }
 
@@ -551,13 +559,18 @@ p#precio{
 
 textarea {
     padding: 5%;
-    background-color: #E4ECFF;
-    border-radius: 20px;
+    background-color: var(--color-fondo-celeste);
+    border-color: #E4ECFF;
+    border-width: var(--borde);
+    border-radius: 25px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     margin: 5% 0;
-    border: none;
     display: block;
 
+}
+textarea::placeholder {
+  opacity: 1;
+  color: var(--color-primario);
 }
 
 #enviar_comentarios {
