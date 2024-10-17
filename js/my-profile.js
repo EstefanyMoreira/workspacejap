@@ -67,7 +67,6 @@ function guardarDatos() {
 
 const imagenGuardada = localStorage.getItem("imagenPerfil");
 if (imagenGuardada) {
-    document.getElementById('fotoPerfil').src = imagenGuardada;
     document.getElementById('imgPerfil').src = imagenGuardada;
 }
 
