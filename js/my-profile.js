@@ -65,7 +65,7 @@ function guardarDatos() {
     alert("Datos guardados con exito");  
 }
 
-const imagenGuardada = localStorage.getItem("imagenPerfil");
+
 if (imagenGuardada) {
     document.getElementById('imgPerfil').src = imagenGuardada;
 }
