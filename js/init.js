@@ -137,3 +137,9 @@ let radioButtons = document.querySelectorAll('input[name="modo"]');
 radioButtons.forEach(radio => {
   radio.addEventListener('click', guardarDatos);
 });
+
+const imagenGuardada = localStorage.getItem("imagenPerfil");
+if (imagenGuardada) {
+    document.getElementById('fotoPerfil').src = imagenGuardada;
+  
+}
