@@ -60,12 +60,17 @@ function selectedProducts() {
 // Son útiles para almacenar datos que se puedan usar en JS sin interferir con la estructura HTML.
 
 document.addEventListener("DOMContentLoaded", () => {
-  let usuario = localStorage.getItem("user");
+  let email = localStorage.getItem("email");
+  let datos = JSON.parse(localStorage.getItem("datosFormulario"));
 
-  if (usuario === null) {
+  if (email === null) {
     location.href = "login.html";
   } else {
-    document.getElementById("miPerfil").innerText = usuario;
+    document.getElementById("miPerfil").innerHTML = email;
+  }
+
+  if (datos.nombre) {
+    document.getElementById("miPerfil").innerHTML = datos.nombre;
   }
 });
 

@@ -279,7 +279,7 @@ p#precio{
         }
 
     body {
-        background-color: rgb(255, 255, 255);
+        background-color: var(--color-fondo);
     
     }
 
@@ -446,7 +446,7 @@ p#precio{
   }
 
   #carousel{
-    background-color: var(--color-fondo-celeste);
+    background-color: transparent;
     color: var(--color-secundario);
   }
 
