@@ -60,17 +60,14 @@ function selectedProducts() {
 // Son útiles para almacenar datos que se puedan usar en JS sin interferir con la estructura HTML.
 
 document.addEventListener("DOMContentLoaded", () => {
-  let email = localStorage.getItem("email");
-  let datos = JSON.parse(localStorage.getItem("datosFormulario"));
+  let datos = JSON.parse(localStorage.getItem("datosPerfil"));
 
-  if (email === null) {
-    location.href = "login.html";
-  } else {
-    document.getElementById("miPerfil").innerHTML = email;
-  }
+  let miPerfil = document.getElementById("miPerfil");
 
   if (datos.nombre) {
-    document.getElementById("miPerfil").innerHTML = datos.nombre;
+    miPerfil.innerHTML = datos.nombre;
+  } else {
+    miPerfil.innerHTML = "Perfil";
   }
 });
 
@@ -116,12 +113,12 @@ logout.addEventListener("click", () => {
 
 // Función para aplicar el modo día/noche
 function aplicarModo(modo) {
-  document.body.classList.toggle('modo-noche', modo === 'noche');
+  document.body.classList.toggle("modo-noche", modo === "noche");
   document.querySelector(`input[name="modo"][value="${modo}"]`).checked = true;
 }
 
 // Mostrar el modo guardado al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   const datosGuardados = JSON.parse(localStorage.getItem("modo"));
   if (datosGuardados) {
     aplicarModo(datosGuardados.modo);
@@ -139,12 +136,11 @@ function guardarDatos() {
 }
 
 let radioButtons = document.querySelectorAll('input[name="modo"]');
-radioButtons.forEach(radio => {
-  radio.addEventListener('click', guardarDatos);
+radioButtons.forEach((radio) => {
+  radio.addEventListener("click", guardarDatos);
 });
 
 const imagenGuardada = localStorage.getItem("imagenPerfil");
 if (imagenGuardada) {
-    document.getElementById('fotoPerfil').src = imagenGuardada;
-  
+  document.getElementById("fotoPerfil").src = imagenGuardada;
 }
