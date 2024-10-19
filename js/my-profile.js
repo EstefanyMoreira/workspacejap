@@ -31,12 +31,22 @@ function guardarDatos() {
     // aqui se abren 2 opcion, o modificar los datos ya guardados
     // o crear un usuario nuevo pusheandolo al arreglo 
 
+    const datosFormulario = { 
+        nombre, 
+        segundo_nombre, 
+        apellido, 
+        segundo_apellido, 
+        email, 
+        telefono_contacto, 
+        modo 
+    };
+
     if (usuarioLoggeado > -1) {
     
-        usuarios[usuarioLoggeado] = { nombre, segundo_nombre, apellido, segundo_apellido, email, telefono_contacto, modo };
+        usuarios[usuarioLoggeado] = { ...datosFormulario };
+
     } else {
-        const nuevoUsuario = { nombre, segundo_nombre, apellido, segundo_apellido, email, telefono_contacto, modo };
-        usuarios.push(nuevoUsuario);
+        usuarios.push(datosFormulario);
     }
 
     // guardar el arreglo actualizado en localStorage
@@ -54,11 +64,24 @@ function guardarDatos() {
         reader.onload = function(e) {
             const imagenBase64 = e.target.result;
             document.getElementById('fotoPerfil').src = imagenBase64;
-             // guardar la imagen en Base64
-            localStorage.setItem("imagenPerfil", imagenBase64);
+    
+    
+           // Agregar la imagen al objeto datosFormulario
+            datosFormulario.imagenPerfil = imagenBase64;
+
+            // Actualizar el usuario loggeado con la imagen
+            usuarios[usuarioLoggeado].imagenPerfil = imagenBase64;
+
+            // Guardar datosFormulario actualizado
+            localStorage.setItem("datosFormulario", JSON.stringify(datosFormulario));
+            localStorage.setItem("usuarios", JSON.stringify(usuarios)); // Actualizar usuarios en localStorage
+
         };
          // leer el archivo como URL de datos
         reader.readAsDataURL(fotoPerfil);
+    } else {
+        // Si no hay imagen, solo guardamos datosFormulario
+        localStorage.setItem("datosFormulario", JSON.stringify(datosFormulario));
     }
     
 
@@ -66,9 +89,7 @@ function guardarDatos() {
 }
 
 
-if (imagenGuardada) {
-    document.getElementById('imgPerfil').src = imagenGuardada;
-}
+
 
 // mostrar el email guardado en el local al cargar la p[agina
 // window.onload (esto es nuevo)se dispara cuando la pagina y  sus recursos cargaron por completo 
@@ -91,13 +112,23 @@ window.onload = function() {
         document.getElementById("segundo_apellido").value = usuario.segundo_apellido || '';
         document.getElementById("telefono_contacto").value = usuario.telefono_contacto || '';
         document.getElementById("email").value = usuario.email;
+        
 
-        if (usuario.modo) {
-            document.querySelector(`input[name="modo"][value="${usuario.modo}"]`).checked = true;
+         
+
+        // Cargar imagen de perfil si existe
+        if (usuario.imagenPerfil) {
+            document.getElementById('imgPerfil').src = usuario.imagenPerfil;
+            document.getElementById('fotoPerfil').src = usuario.imagenPerfil;
         }
     } else {
         const emailGuardado = localStorage.getItem("email");
         document.getElementById("email").value = emailGuardado;
+
+    }
+
+    if (usuario.modo) {
+        document.querySelector(`input[name="modo"][value="${usuario.modo}"]`).checked = true;
     }
 };
 

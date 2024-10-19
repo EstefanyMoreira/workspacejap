@@ -60,8 +60,11 @@ function selectedProducts() {
 // Son útiles para almacenar datos que se puedan usar en JS sin interferir con la estructura HTML.
 
 document.addEventListener("DOMContentLoaded", () => {
-  let email = localStorage.getItem("email");
-  let datos = JSON.parse(localStorage.getItem("datosFormulario"));
+  const usuariosJSON = localStorage.getItem('usuarios');
+  const usuarios = JSON.parse(usuariosJSON) || [];
+  const email = localStorage.getItem('email');  
+
+  const usuarioEncontrado = usuarios.find(usuario => usuario.email === email);
 
   if (email === null) {
     location.href = "login.html";
@@ -69,10 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("miPerfil").innerHTML = email;
   }
 
-  if (datos.nombre) {
-    document.getElementById("miPerfil").innerHTML = datos.nombre;
-  }
-});
+ if (usuarioEncontrado) {
+    document.getElementById("miPerfil").innerHTML= usuarioEncontrado.nombre;
+    document.getElementById("fotoPerfil").src= usuarioEncontrado.imagenPerfil;
+
+} else {
+    console.log('Usuario no encontrado');
+}
+})
 
 let iconDropDown =
   '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" id="dropDownIcon" width="12.000000pt" height="12.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"fill="#000000" stroke="none"><path d="M652 3623 c-68 -33 -102 -102 -87 -180 6 -34 112 -143 963 -995 852 -851 961 -957 995 -963 94 -18 30 -76 1056 948 712 711 948 953 963 986 54 118 -47 240 -179 216 -34 -6 -137 -105 -921 -888 l-882 -882 -873 872 c-614 614 -883 877 -909 888 -47 19 -84 19 -126 -2z"/></g></svg>';
@@ -143,8 +150,3 @@ radioButtons.forEach(radio => {
   radio.addEventListener('click', guardarDatos);
 });
 
-const imagenGuardada = localStorage.getItem("imagenPerfil");
-if (imagenGuardada) {
-    document.getElementById('fotoPerfil').src = imagenGuardada;
-  
-}
