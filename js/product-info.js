@@ -284,9 +284,9 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
   event.preventDefault()
 
   // Capturar datos del formulario
-  // tomo el user del local storage con su clave 
+  // tomo el email del local storage con su clave 
 
-  let user = localStorage.getItem("user")
+  let user = localStorage.getItem("email")
 
   let commentText = document.getElementById("comentarios").value;
   let commentVote = document.getElementById("calificacion").value;

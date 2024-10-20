@@ -59,21 +59,8 @@ function selectedProducts() {
 // El prefijo data- permite crear atributos personalizados.
 // Son útiles para almacenar datos que se puedan usar en JS sin interferir con la estructura HTML.
 
-document.addEventListener("DOMContentLoaded", () => {
-  let email = localStorage.getItem("email");
-  let datos = JSON.parse(localStorage.getItem("datosFormulario"));
 
-  if (email === null) {
-    location.href = "login.html";
-  } else {
-    document.getElementById("miPerfil").innerHTML = email;
-  }
-
-  if (datos.nombre) {
-    document.getElementById("miPerfil").innerHTML = datos.nombre;
-  }
-});
-
+// Dropdown del perfil
 let iconDropDown =
   '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" id="dropDownIcon" width="12.000000pt" height="12.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"fill="#000000" stroke="none"><path d="M652 3623 c-68 -33 -102 -102 -87 -180 6 -34 112 -143 963 -995 852 -851 961 -957 995 -963 94 -18 30 -76 1056 948 712 711 948 953 963 986 54 118 -47 240 -179 216 -34 -6 -137 -105 -921 -888 l-882 -882 -873 872 c-614 614 -883 877 -909 888 -47 19 -84 19 -126 -2z"/></g></svg>';
 
@@ -111,7 +98,8 @@ document.addEventListener("click", (e) => {
 
 let logout = document.getElementById("logout");
 logout.addEventListener("click", () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem("email");
+  localStorage.removeItem("modo");
 });
 
 // Función para aplicar el modo día/noche
@@ -120,21 +108,19 @@ function aplicarModo(modo) {
   document.querySelector(`input[name="modo"][value="${modo}"]`).checked = true;
 }
 
-// Mostrar el modo guardado al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-  const datosGuardados = JSON.parse(localStorage.getItem("modo"));
-  if (datosGuardados) {
-    aplicarModo(datosGuardados.modo);
-  }
-});
-
 // Guarda modo en el LocalStorage
+// También actualiza el modo del usuario si ya está logueado
 function guardarDatos() {
   let modo = document.querySelector('input[name="modo"]:checked').value;
 
   const datos = { modo };
   localStorage.setItem("modo", JSON.stringify(datos));
 
+  // Si el usuario está logueado, actualiza su modo en el arreglo de usuarios
+  if (usuarioLoggeado >-1) {
+    usuarios[usuarioLoggeado].modo = modo;
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }
   aplicarModo(modo);
 }
 
@@ -143,8 +129,39 @@ radioButtons.forEach(radio => {
   radio.addEventListener('click', guardarDatos);
 });
 
-const imagenGuardada = localStorage.getItem("imagenPerfil");
-if (imagenGuardada) {
-    document.getElementById('fotoPerfil').src = imagenGuardada;
-  
+
+// obtener usuarios ya guardados o sino hacer un arreglo vacio en el cual se guardaran los datos
+const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+const email = localStorage.getItem("email");
+const usuarioLoggeado = usuarios.findIndex(usuarios => usuarios.email === email); // Encuentra el índice del usuario logueado
+
+// Si el usuario está logueado y tiene una imagen guardada, la muestra; si no, muestra una imagen por defecto
+if (usuarioLoggeado > -1 && usuarios[usuarioLoggeado].imagen) {
+  document.getElementById('fotoPerfil').src = usuarios[usuarioLoggeado].imagen;
+} else {
+  document.getElementById("fotoPerfil").src = "img/img_perfil.png";
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  if (email === null) {
+    location.href = "login.html";
+  } else {
+    document.getElementById("miPerfil").innerHTML = email; // Muestra el email del usuario en la navbar
+  }
+
+  // Si el usuario guarda sus datos se muestra su nombre en vez de su email en la navbar
+  if (usuarioLoggeado>-1) {
+    document.getElementById("miPerfil").innerHTML = usuarios[usuarioLoggeado].nombre;
+  }
+
+  // Mostrar el modo guardado al cargar la página
+  const datosGuardados = JSON.parse(localStorage.getItem("modo"));
+  if (usuarioLoggeado >-1) {
+    aplicarModo(usuarios[usuarioLoggeado].modo) // Aplica el modo guardado para el usuario logueado
+  } else if (datosGuardados) {
+    aplicarModo(datosGuardados.modo); // Aplica el modo guardado global
+  }
+});
