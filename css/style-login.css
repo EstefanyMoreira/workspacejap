@@ -95,7 +95,7 @@ label {
 
 /* Comienza estilo de los campos de texto*/
 
-input[type="text"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 0.5rem;
@@ -108,7 +108,7 @@ input[type="password"] {
 
 /* al pasar el mouse por arriba se muestra un borde */
 
-input[type="text"]:hover,
+input[type="email"]:hover,
 input[type="password"]:hover {
   border: 2px solid #e83b57 ;
   transition: border-color 0.5s ease; 
@@ -116,7 +116,7 @@ input[type="password"]:hover {
 
 /* al hacer click se mantiene el borde de color */
 
-input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus {
   border-color: #e83b57;
   outline: none; /* esto sirve para sacar el borde por defecto del navegador */ 
