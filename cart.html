@@ -14,13 +14,32 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+
+    <!--bootstrap icons-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+
+    <!--Hoja de estilo-->
+    <link
+      href="css\style-cart.css"
+      rel="stylesheet"
+    />
+
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
       <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -42,13 +61,72 @@
         </div>
       </div>
     </nav>
-    <main>
-      <div class="container">
-        <div class="alert alert-danger text-center" role="alert">
-          <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-        </div>
+
+    <main class="row d-flex ">
+     
+      <!-- Sección izquierda: lista de productos agregados -->
+      <div class="contGeneral col-lg-8 col-md-12 col-sm-12   ">
+
+       
+        
+
+          <div class="card d-flex flex-row align-items-center">
+              <!-- Contenedor de imagen con imagen -->
+              <div class="contImg">
+                  <img src="img/prod50925_4.jpg" alt="Nombre del producto">
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                  <div class="nameButton d-flex justify-content-between align-items-center">
+                      <p class="productName">Nombre del producto</p> 
+                      <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
+                          <i class="bi bi-trash3"></i>
+                      </button>
+                  </div>
+                  <div>
+                      <p class="precio">Precio: USD 13500</p>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-end">
+                      <div class="subtotal">
+                          <p class="subtotal-text">Subtotal:</p> 
+                          <div class="d-flex align-items-center">
+                              <p class="subtotalNum mb-0">USD 13500</p>
+                          </div>
+                      </div>
+                      <div class="cantidad text-end">
+                          <p class="mb-0">Cantidad: <input type="text" id="numero" name="numero" required></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </main>
+  
+      <!-- Sección derecha: lista detalle de compra -->
+      <div class="contGeneral2  card ">
+        <p class="productName mb-4">Detalle de compra</p> 
+        <div class="row ">
+          <div class="lista d-flex justify-content-between">
+          <p>Envío</p> <p class="bold">Gratis</p>
+          </div>
+
+          <div class="lista d-flex justify-content-between mb-4">
+            <p>Total</p> <p class="bold">UYU12500</p>
+            </div>
+
+      <!-- Botones -->
+       <div class="contBtn">
+            <button type="button" class="btnRojo mb-2" value="checkout" id="checkout">Checkout</button>
+            <button type="button" class="btnAzul" value="seguir" id="seguir">Seguir comprando</button>
+            </div>
+
+      
+        </div>
+    </div>
+    
+  </main>
+
+
+
+
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
@@ -61,6 +139,10 @@
           >
         </p>
       </div>
+
+
+     
+
     </footer>
     <div id="spinner-wrapper">
       <div class="lds-ring">
