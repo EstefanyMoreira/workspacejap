@@ -454,9 +454,11 @@ p#precio{
 
   .full-circle {
     color: #F95264;
+    cursor: pointer;
   }
   .empty-circle {
     color: #DDE7FF;
+    cursor: pointer;
   }
   
   .fa-chevron-left, .fa-chevron-right {
@@ -560,6 +562,7 @@ p#precio{
 textarea {
     padding: 5%;
     background-color: var(--color-fondo-celeste);
+    color: var(--color-primario);
     border-color: #E4ECFF;
     border-width: var(--borde);
     border-radius: 25px;
@@ -567,6 +570,9 @@ textarea {
     margin: 5% 0;
     display: block;
 
+}
+textarea:focus {
+  outline: none;
 }
 textarea::placeholder {
   opacity: 1;

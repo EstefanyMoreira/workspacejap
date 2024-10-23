@@ -46,6 +46,7 @@ small {
     border: none;
     transition: background-color 0.5s ease;
     cursor: pointer;
+    user-select: none;
 }
 
 .btnRadio {
@@ -106,10 +107,9 @@ small {
     align-items: center;
     border-radius: 10px;
     height: 2.5rem;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.right-section input[type="text"], .right-section input[type="email"] {
+.right-section input[type="text"], .right-section input[type="email"], .right-section input[type="number"] {
     background-color: #E4ECFF;
     border-style: none;
     width: 100%;
@@ -117,10 +117,17 @@ small {
     margin-top: 1%;
 }
 
-input[type="text"]:valid:focus {
+input[type="text"]:valid:focus, input[type="number"]:valid:focus {
     border-color: var(--color-boton-azul);
     outline: none;
     box-shadow: 0 0 0 .15em var(--color-boton-azul);
+}
+
+/* Ocultar los spinners*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .right-section input[type="file"]{
@@ -223,16 +230,3 @@ input[type="text"]:valid:focus {
         margin-bottom: 0%;
     }
 }
-    
-
- .profile-pic {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    overflow: hidden;
-    display: flex;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-}
-

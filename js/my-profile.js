@@ -16,17 +16,6 @@ function guardarDatos() {
         alert("Por favor, complete todos los campos obligatorios.");  
         return;
     }
-
-     // obtener usuarios ya guardados o sino hacer un arreglo vacio en el cual se guardaran los datos
-
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-    // verificar si el email ya existe para traer los datos segun el email
-    // se utiliza find index para que devuelva el index primer dato que coincida con el email para poder modificar los datos
-    //de usuario 
-    // usurio loggeado nos dice si el usuario ya existe
-
-    const usuarioLoggeado = usuarios.findIndex(usuario => usuario.email === email);
     
     // aqui se abren 2 opcion, o modificar los datos ya guardados
     // o crear un usuario nuevo pusheandolo al arreglo 
@@ -51,18 +40,23 @@ function guardarDatos() {
 
     // guardar el arreglo actualizado en localStorage
     // convertir datos en cadena de texto para guardar en el local
-
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    const datos = { nombre, segundo_nombre, apellido, segundo_apellido, email, telefono_contacto, modo };
-
-    localStorage.setItem("datosFormulario", JSON.stringify(datos));
    
     //guardar imagen en el local con FileReader
-
     if (fotoPerfil) {
         const reader = new FileReader();
         reader.onload = function(e) {
             const imagenBase64 = e.target.result;
+
+            // Si no existe el usuario logueado, es un usuario nuevo y se agrega al arreglo
+            if (usuarioLoggeado < 0) {
+                const nuevoUsuario = { nombre, segundo_nombre, apellido, segundo_apellido, email, telefono_contacto, modo, imagen: imagenBase64 };
+                usuarios.push(nuevoUsuario);
+            } else {
+                usuarios[usuarioLoggeado].imagen = imagenBase64; // Si es un usuario existente, actualizar su imagen
+            }
+            localStorage.setItem("usuarios", JSON.stringify(usuarios)); // Guardar usuarios actualizados en localStorage
+
             document.getElementById('fotoPerfil').src = imagenBase64;
     
     
@@ -139,13 +133,10 @@ let guardar = document.getElementById("guardarBtn")
 
 guardar.addEventListener("click", () => {
     guardarDatos();
-}
-)
+});
 
 // Feedback de imagen cargada
 document.getElementById('imagen').addEventListener('change', function() {
     const feedbackValid = document.getElementById('valid-feedback-img');
     feedbackValid.style.display = 'block';
 });
-
-
