@@ -200,15 +200,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
 
-// función que crea un array y agrega el id del producto seleccionado
+// función que crea un array y agrega los datos del producto seleccionado
 
       function addToCart(productId) {
         let cart = JSON.parse(localStorage.getItem("userCart")) || [];
-        cart.push(productId,product.name,product.cost,product.currency,firstImageUrl);
+        const productToCart = {productId, name: product.name, cost: product.cost, currency: product.currency, firstImageUrl}
+        cart.push(productToCart);
         localStorage.setItem("userCart", JSON.stringify(cart));
       }
       
-// botón <3 que agrega producto al carrito
+// botón carrito que solo agrega el producto
       const btnBlockRojo = document.getElementById("btnBlockRojo");
       btnBlockRojo.addEventListener("click", function() {
         let productToAdd = localStorage.getItem("productID");
