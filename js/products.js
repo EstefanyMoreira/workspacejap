@@ -20,7 +20,7 @@ function showProductList(array) {
         <div class="nameButton col-12">
             <h4>` + product.name + `</h4> 
             <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
-                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
             </button>
         </div>
 

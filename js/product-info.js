@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
                    <div class="nameButton">
                     <h4>${product.name}</h4> 
                     <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
-                    <i class="fa-regular fa-heart"></i></button>
+                    <i class="fa-solid fa-cart-shopping"></i></button>
                     </div>
 
                     <small> llevalo hoy por </small>
