@@ -4,22 +4,27 @@ background-color: #FAF9FB;
 }
 
 main {
-    padding-top: 2%;
-    padding-right: 10% !important;
-    padding-left: 10% !important ;
-    justify-content: center;
+   min-height: auto; /*IMPORTANTE no cambiar esto ya que entra la conf de styles.css y rompe*/
+  justify-content: center;
 display: flex;
-    margin-top: -10%;
     
+    
+}
+
+.bloque-general {
+    width: 85%;
+    justify-content: center;
 }
 
 
 
-.title {
-    font-size: 1.5em;
-    padding-left: 10%;
-    padding-bottom: 0;
+.titulo {
+    font-size: 2em;
+    padding-left: 5%;
+ margin: 3%  0 3%;
+    
    font-weight: 700;
+   
 
    
 }
@@ -40,21 +45,20 @@ display: flex;
 
 
 .contImg {
-    height: 120px;
-    width: 120px;
+    height: 8em;
+    width: 8em;
     overflow: hidden; /* Para ocultar cualquier parte que sobresalga */
     position: relative; /* Permite centrar la imagen */
     padding: 0;
- 
-    margin: 10px;
+    border-radius: 15px;
+    }
 
-}
-
-img {
+.imgProducto {
     width: auto; /* Mantiene la relación de aspecto */
     height: 100%; /* Ajusta la altura al contenedor */
     position: absolute; /* Permite centrar la imagen */
     background-size: cover;
+   
 
    
 }
@@ -108,8 +112,8 @@ img {
 }
 /*estilo input*/
 input {
-
-    border: 2px solid #E4ECFF;
+text-align: center;
+    border: 2.5px solid #E4ECFF;
   border-radius: 6px;
    width: 15%;
    height: 15%;
@@ -155,19 +159,17 @@ input {
 
 
 .contGeneral2 {
-    width: 25%;
-    height: 65%;
+margin: 0 3%;
+height: auto;
     padding: 3.5%;
-    padding-top: 3% ;
-    margin-left: 3%;
-    margin-right: 3%;
+  
 
 }
 
 .contGeneral {
-    width: 55%;
    
-   height: 20%;
+   
+   
   
 
 }

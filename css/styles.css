@@ -175,7 +175,7 @@ footer p {
 }
 
 main {
-  min-height: calc(100vh - 210px);
+  min-height: calc(100vh - 210px); /*Esto lo tuve que comentar porque daba problemas en el carrito*/
 }
 
 a.custom-card,
