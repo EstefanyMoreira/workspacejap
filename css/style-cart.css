@@ -60,6 +60,9 @@ display: flex;
     height: 100%; /* Ajusta la altura al contenedor */
     position: absolute; /* Permite centrar la imagen */
     background-size: cover;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
    
 
    
@@ -107,11 +110,7 @@ display: flex;
     margin-bottom: 2%;
 }
 
-.contGeneral2 .productName{
-   
-    margin-bottom: 10%;
-    
-}
+
 /*Linea de precio*/
 
 .precio {
@@ -237,7 +236,12 @@ text-align: center;
   } 
 
   .bold {
+
 font-weight: 700;  } 
+
+.row {
+    --bs-gutter-x: 0;
+    }
 
     
 /*Media queries para pantalla small */
@@ -252,7 +256,7 @@ font-weight: 700;  }
     }
 
     .productName{
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
     
     .contGeneral2 .productName{
@@ -261,20 +265,20 @@ font-weight: 700;  }
     }
 
     .subtotal {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .subtotal-text {
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
     .cantidad {
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
 
     
 .contImg {
-    height: 3.5em;
-    width: 3.5em;
+    height: 5em;
+    width: 5em;
     
     }
 
@@ -284,18 +288,12 @@ font-weight: 700;  }
      
 }
 
-.btnBlockRojo {
-    height: 1.2em ;
-    width:1.2em ;
-    border-radius: 3px;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-}
+
 
 input {
     margin: 0;
-    height: 2.3em ;
-    width:2.3em ;
+    height: 2.8m ;
+    width:2.8em ;
 }
 
 .card {
@@ -343,7 +341,9 @@ input {
         ;
     }
     
- 
+ .i {
+   
+ }
  
 
 }
