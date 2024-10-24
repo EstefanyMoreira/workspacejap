@@ -1,25 +1,31 @@
 body {
 background-color: #FAF9FB;
+width: 100%;
 
 }
 
 main {
-    padding-top: 2%;
-    padding-right: 10% !important;
-    padding-left: 10% !important ;
-    justify-content: center;
+   min-height: auto; /*IMPORTANTE no cambiar esto ya que entra la conf de styles.css y rompe*/
+  justify-content: center;
 display: flex;
-    margin-top: -10%;
     
+    
+}
+
+.bloque-general {
+    width: 85%;
+    justify-content: center;
 }
 
 
 
-.title {
-    font-size: 1.5em;
-    padding-left: 10%;
-    padding-bottom: 0;
+.titulo {
+    font-size: 2em;
+    padding-left: 5%;
+ margin: 3%  0 3%;
+    
    font-weight: 700;
+   
 
    
 }
@@ -29,7 +35,7 @@ display: flex;
     border-radius: 25px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 5%;
-    border-color: #E4ECFF;
+    border-color: none;
     border-style: solid;
     overflow: hidden;
     display: flex;
@@ -40,21 +46,21 @@ display: flex;
 
 
 .contImg {
-    height: 120px;
-    width: 120px;
+    height: 8em;
+    width: 8em;
     overflow: hidden; /* Para ocultar cualquier parte que sobresalga */
     position: relative; /* Permite centrar la imagen */
     padding: 0;
- 
-    margin: 10px;
+    
+    border-radius: 15px;
+    }
 
-}
-
-img {
+.imgProducto {
     width: auto; /* Mantiene la relación de aspecto */
     height: 100%; /* Ajusta la altura al contenedor */
     position: absolute; /* Permite centrar la imagen */
     background-size: cover;
+   
 
    
 }
@@ -101,6 +107,11 @@ img {
     margin-bottom: 2%;
 }
 
+.contGeneral2 .productName{
+   
+    margin-bottom: 10%;
+    
+}
 /*Linea de precio*/
 
 .precio {
@@ -108,8 +119,8 @@ img {
 }
 /*estilo input*/
 input {
-
-    border: 2px solid #E4ECFF;
+text-align: center;
+    border: 2.5px solid #E4ECFF;
   border-radius: 6px;
    width: 15%;
    height: 15%;
@@ -155,22 +166,21 @@ input {
 
 
 .contGeneral2 {
-    width: 25%;
-    height: 65%;
-    padding: 3.5%;
-    padding-top: 3% ;
-    margin-left: 3%;
-    margin-right: 3%;
+
+    padding: 3%;
+    border-radius: 25px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
+    border-color: #E4ECFF;
+    border-style: solid;
+    overflow: hidden;
+    border: none;
+    
+    
 
 }
 
-.contGeneral {
-    width: 55%;
-   
-   height: 20%;
-  
 
-}
 
 /*botones*/
 
@@ -187,6 +197,7 @@ input {
     transition: background-color 0.5s ease;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 0.9rem;
+    margin-top: 5%;
 
     
    
@@ -222,7 +233,117 @@ input {
 
   .lista p {
     font-size: 0.9rem;
+    margin-bottom: 2%;
   } 
 
   .bold {
 font-weight: 700;  } 
+
+    
+/*Media queries para pantalla small */
+
+@media (max-width: 767px) {
+    .titulo {
+        font-size: 1.1em;
+        margin-top: 10% ;
+        margin-bottom: 5%;
+        margin-left: 0;
+      
+    }
+
+    .productName{
+        font-size: 0.8em;
+    }
+    
+    .contGeneral2 .productName{
+        font-size: 1em;
+        margin-bottom: 5%;
+    }
+
+    .subtotal {
+        font-size: 0.8em;
+    }
+
+    .subtotal-text {
+        font-size: 0.6em;
+    }
+    .cantidad {
+        font-size: 0.5em;
+    }
+
+    
+.contImg {
+    height: 3.5em;
+    width: 3.5em;
+    
+    }
+
+.imgProducto {
+    width: auto; /* Mantiene la relación de aspecto */
+    height: 100%; /* Ajusta la altura al contenedor */
+     
+}
+
+.btnBlockRojo {
+    height: 1.2em ;
+    width:1.2em ;
+    border-radius: 3px;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+input {
+    margin: 0;
+    height: 2.3em ;
+    width:2.3em ;
+}
+
+.card {
+    padding: 3%;
+    height:100%;
+    margin-bottom: 10%;
+    border-color: #E4ECFF;
+    border-style: solid;
+}
+
+.nameButton {
+    margin-bottom: 5%;
+}
+
+.card-body {
+    padding: 0;
+    margin-left: 3%;
+}
+
+.contGeneral {
+    padding: 0 0 ;
+}
+
+
+    .contGeneral2 {
+        margin: 5%;
+        padding: 10%;
+       
+        border: none;
+        background-color: white;
+
+    }
+
+
+    .contBtn {
+        display: flex; /* Usar flexbox para alinear los botones */
+        flex-direction: row; /* Alinear en fila */
+        justify-content: center; /* Centrar horizontalmente */
+        flex-wrap: wrap; /* Permitir que los botones se envuelvan en pantallas más pequeñas */
+    }
+
+
+    .btnAzul {
+        background-color: #E4ECFF; /*color de fondo nuevo*/
+        ;
+    }
+    
+ 
+ 
+
+}
