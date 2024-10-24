@@ -9,7 +9,7 @@ main {
     padding-left: 10% !important ;
     justify-content: center;
 display: flex;
-    
+    margin-top: -10%;
     
 }
 
@@ -17,8 +17,10 @@ display: flex;
 
 .title {
     font-size: 1.5em;
-    font-weight: 700;
-    padding-left: 15%;
+    padding-left: 10%;
+    padding-bottom: 0;
+   font-weight: 700;
+
    
 }
 .card{
