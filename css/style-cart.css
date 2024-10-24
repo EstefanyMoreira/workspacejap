@@ -1,0 +1,228 @@
+body {
+background-color: #FAF9FB;
+
+}
+
+main {
+    padding-top: 2%;
+    padding-right: 10% !important;
+    padding-left: 10% !important ;
+    justify-content: center;
+display: flex;
+    margin-top: -10%;
+    
+}
+
+
+
+.title {
+    font-size: 1.5em;
+    padding-left: 10%;
+    padding-bottom: 0;
+   font-weight: 700;
+
+   
+}
+.card{
+  
+   padding: 3%;
+    border-radius: 25px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
+    border-color: #E4ECFF;
+    border-style: solid;
+    overflow: hidden;
+    display: flex;
+
+}
+
+
+
+
+.contImg {
+    height: 120px;
+    width: 120px;
+    overflow: hidden; /* Para ocultar cualquier parte que sobresalga */
+    position: relative; /* Permite centrar la imagen */
+    padding: 0;
+ 
+    margin: 10px;
+
+}
+
+img {
+    width: auto; /* Mantiene la relación de aspecto */
+    height: 100%; /* Ajusta la altura al contenedor */
+    position: absolute; /* Permite centrar la imagen */
+    background-size: cover;
+
+   
+}
+
+
+
+.nameButton {
+    width: auto;
+    display: flex;
+}
+
+
+/*boton rojo basura*/
+
+.btnBlockRojo {
+    background: #e83b57;
+    color: #ffffff; 
+    font-weight: 700; 
+    border: none;
+    border-radius: 7px;
+    height: 1.7rem;
+    width: 1.7rem;
+    transition: background-color 0.5s ease;
+
+}
+
+
+.btnBlockRojo:hover {
+    background: #c13149;    
+
+}
+
+#btnBlockRojo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Nombre del producto*/
+.productName{
+    font-size: 110%;
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+/*Linea de precio*/
+
+.precio {
+    font-size: 0.9em;
+}
+/*estilo input*/
+input {
+
+    border: 2px solid #E4ECFF;
+  border-radius: 6px;
+   width: 15%;
+   height: 15%;
+}
+
+
+/*subtotal text y precio*/
+.subtotal {
+    width: 50%;
+}
+
+.subtotal-text {
+    margin-bottom: 0;
+    font-size: 0.9em;
+
+}
+
+.subtotalNum {
+    font-weight: 700;
+}
+
+
+/*cantidad*/
+
+.cantidad {
+     font-size: 0.9rem;
+    
+}
+
+
+/*seccion derecha*/
+
+/*sin puntos en la lista*/
+
+.sin-puntos {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margen */
+    display: flex; /* Hace que la lista use flexbox */
+    justify-content: space-between; /* Espacio entre los elementos */
+}
+
+
+
+.contGeneral2 {
+    width: 25%;
+    height: 65%;
+    padding: 3.5%;
+    padding-top: 3% ;
+    margin-left: 3%;
+    margin-right: 3%;
+
+}
+
+.contGeneral {
+    width: 55%;
+   
+   height: 20%;
+  
+
+}
+
+/*botones*/
+
+.btnRojo {
+    
+    background: #e83b57;
+    color: #ffffff;
+    font-weight: 700;
+    align-items: right;
+    border: none;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 100%;
+    transition: background-color 0.5s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+
+    
+   
+  }
+  
+  .btnRojo:hover {
+    background: #c13149;
+  }
+
+  .btnAzul {
+    
+    background: #E4ECFF;
+    color: #1c0e34;
+    font-weight: 700;
+    align-items: right;
+    border: none;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 100%;
+    transition: background-color 0.5s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    
+   
+  }
+  
+  .btnAzul:hover {
+    background: #c0d0f9;
+  }
+
+  .contBtn 
+  { width: 100%;}
+
+  .lista p {
+    font-size: 0.9rem;
+  } 
+
+  .bold {
+font-weight: 700;  } 
