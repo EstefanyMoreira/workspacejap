@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       function addToCart(productId) {
         let cart = JSON.parse(localStorage.getItem("userCart")) || [];
-        cart.push(productId);
+        cart.push(productId,product.name,product.cost,product.currency,firstImageUrl);
         localStorage.setItem("userCart", JSON.stringify(cart));
       }
       
