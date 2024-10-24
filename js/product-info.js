@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
                    <div class="nameButton">
                     <h4>${product.name}</h4> 
                     <button type="button" class="btnBlockRojo" id="btnBlockRojo" value="carrito">
-                    <i class="fa-regular fa-heart"></i></button>
+                    <i class="fa-solid fa-cart-shopping"></i></button>
                     </div>
 
                     <small> llevalo hoy por </small>
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
                    
                     <div class="cont_boton">
                     <p>¡Obten el tuyo ahora!</p>
-                <button type="button" class="btnRojo" value="comprar">Comprar</button>
+                <button type="button" class="btnRojo" id="btnRojo" value="comprar">Comprar</button>
                 </div>
                 </div>
                 </div>
@@ -199,7 +199,36 @@ document.addEventListener("DOMContentLoaded", function () {
           carrousel.remove();
         });
       });
-    }
+
+// función que crea un array y agrega los datos del producto seleccionado
+
+      function addToCart(productId) {
+        let cart = JSON.parse(localStorage.getItem("userCart")) || [];
+        const productToCart = {productId, name: product.name, cost: product.cost, currency: product.currency, firstImageUrl}
+        cart.push(productToCart);
+        localStorage.setItem("userCart", JSON.stringify(cart));
+      }
+      
+// botón carrito que solo agrega el producto
+      const btnBlockRojo = document.getElementById("btnBlockRojo");
+      btnBlockRojo.addEventListener("click", function() {
+        let productToAdd = localStorage.getItem("productID");
+        
+        if (productToAdd) {
+            alert("¡Producto agregado al carrito!");
+            addToCart(productToAdd);
+        }
+    });
+
+// botón de comprar que agrega producto al carrito y redirige al mismo
+       const btnRojo = document.getElementById("btnRojo");
+       btnRojo.addEventListener("click", function() {
+       let productToAdd = localStorage.getItem("productID");
+        
+        if (productToAdd) {
+            addToCart(productToAdd);
+            window.location.href = "cart.html";
+        }})}
   });
 
   // el operador ?? se encarga de igualar la variable al valor de la derecha en caso de que la expresion de la izquierda resulte en undefined.
