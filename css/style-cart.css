@@ -347,3 +347,78 @@ input {
  
 
 }
+
+/*tablet*/
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    p.titulo {
+        font-size: 17px;
+        padding-left: 0%;
+        padding-top: 4%;
+        padding-bottom: 5%;
+    }
+
+    .bloque-general {
+        justify-content: left;
+    }
+
+    .contGeneral2 {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 37%;
+        height: 100%;
+    }
+
+    .contImg {
+        height: 5em;
+        width: 5em;
+        
+        }
+    
+    .imgProducto {
+        width: auto; /* Mantiene la relación de aspecto */
+        height: 100%; /* Ajusta la altura al contenedor */    
+    }
+
+    .card {
+        padding: 3%;
+        border-color: #E4ECFF;
+        border-style: solid;
+        padding-right: 0%;
+    }
+
+    .productName {
+        font-size: 0.9em;
+    }
+
+    .subtotal {
+        font-size: 0.8em;
+    }
+
+    .subtotal-text {
+        font-size: 0.6em;
+    }
+    .cantidad {
+        font-size: 0.6em;
+    }
+
+    .precio {
+        font-size: 0.7em;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding-bottom: 5%;
+    }
+
+    .btnBlockRojo {
+    height: 1.5em ;
+    width: 1.5em ;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 0;
+    }
+
+}
