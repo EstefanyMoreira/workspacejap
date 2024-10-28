@@ -287,7 +287,7 @@ a.custom-card:hover {
 
 /* Paleta por defecto (modo día) */
 :root {
-  --color-fondo: #ffffff;
+  --color-fondo: #FAF9FB;
   --color-fondo-invertidos: #1c0e34;
   --color-primario: #1c1c1c;
   --color-secundario: #000000;
@@ -303,7 +303,7 @@ a.custom-card:hover {
 /* Paleta para el modo noche */
 body.modo-noche {
   --color-fondo: #1c0e34;
-  --color-fondo-invertidos: #ffffff;
+  --color-fondo-invertidos: #FAF9FB;
   --color-primario: #f1f1f1;
   --color-secundario:#ffffff;
   --color-boton-azul: #2e77d7;

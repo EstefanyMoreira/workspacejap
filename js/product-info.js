@@ -204,9 +204,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       function addToCart(productId) {
         let cart = JSON.parse(localStorage.getItem("userCart")) || [];
-        const productToCart = {productId, name: product.name, cost: product.cost, currency: product.currency, firstImageUrl}
-        cart.push(productToCart);
-        localStorage.setItem("userCart", JSON.stringify(cart));
+
+        // Buscar si el producto ya está en el carrito
+        const productM = cart.find(product => product.productId === productId);
+
+        const productToCart = {productId, name: product.name, cost: product.cost, currency: product.currency, firstImageUrl, count: 1}
+        
+        if (productM) {
+          //Si el producto ya está en el carrito, incrementa la cantidad del producto
+          productM.count += 1;
+          localStorage.setItem("userCart", JSON.stringify(cart));
+        } else {
+          // Si el producto no está en el carrito, lo agrega al array
+          cart.push(productToCart);
+          localStorage.setItem("userCart", JSON.stringify(cart));
+        }   
       }
       
 // botón carrito que solo agrega el producto
