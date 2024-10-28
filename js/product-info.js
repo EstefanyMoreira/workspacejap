@@ -229,8 +229,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (productToAdd) {
           Swal.fire({
             title: "¡Producto agregado al carrito!",
-            icon: "success"
-          });
+            imageUrl:"img/system-solid-6-shopping-hover-shopping.webp"  ,
+            imageWidth: 70, // Ancho del GIF
+            imageHeight: 70, // Alto del GIF
+
+  imageAlt: 'Icono personalizado',        });
           
             addToCart(productToAdd);
         }
