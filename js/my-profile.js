@@ -14,8 +14,12 @@ function guardarDatos() {
     // validar campos requeridos
     if (!nombre || !email || !apellido) {
         Swal.fire({
-            title: "Por favor, complete todos los campos obligatorios.",
-            icon: "warning"
+            text: "Por favor, complete todos los campos obligatorios.",
+            confirmButtonText: "Continuar",
+            confirmButtonColor: "#e83b57",
+            imageUrl:"img/system-solid-55-error-hover-error-4.webp",
+            imageWidth: 70, // Ancho del GIF
+            imageHeight: 70, // Alto del GIF
           }); 
         return;
     }
@@ -50,6 +54,7 @@ function guardarDatos() {
             localStorage.setItem("usuarios", JSON.stringify(usuarios)); // Guardar usuarios actualizados en localStorage
 
             document.getElementById('fotoPerfil').src = imagenBase64;
+            document.getElementById("imgPerfil").src = imagenBase64;
         };
          // leer el archivo como URL de datos
         reader.readAsDataURL(fotoPerfil);
@@ -65,8 +70,12 @@ function guardarDatos() {
     localStorage.setItem("email", email)
 
     Swal.fire({
-        title: "Datos guardados con exito",
-        icon: "success"
+        text: "Datos guardados con exito",
+        confirmButtonText: "Continuar",
+        confirmButtonColor: "#e83b57",
+        imageUrl:"img/system-solid-31-check-hover-check-2.webp"  ,
+        imageWidth: 70, // Ancho del GIF
+        imageHeight: 70, // Alto del GIF
       });
 }
 

@@ -15,8 +15,12 @@ if (contraseña!="" && email!=""){
     
 }else{
     Swal.fire({
-        title: "Falta completar usuario o contraseña",
-        icon: "warning"
+        text: "Falta completar usuario o contraseña",
+        confirmButtonText: "Continuar",
+        confirmButtonColor: "#e83b57",
+        imageUrl:"img/system-solid-55-error-hover-error-4.webp"  ,
+        imageWidth: 70, // Ancho del GIF
+        imageHeight: 70, // Alto del GIF
       });
 }
 });

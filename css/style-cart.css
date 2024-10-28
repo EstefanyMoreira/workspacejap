@@ -264,27 +264,16 @@ input {
 
     }
 
-    .imgProducto {
-        width: auto;
-        /* Mantiene la relación de aspecto */
-        height: 100%;
-        /* Ajusta la altura al contenedor */
-
-    }
-
-
 
     input {
         margin: 0;
-        height: 2.8m;
+        height: 2.8em;
         width: 2.8em;
     }
 
     .card {
-        padding: 3%;
         margin-bottom: 10%;
         border-color: #E4ECFF;
-        border-style: solid;
     }
 
     .nameButton {
@@ -358,17 +347,10 @@ input {
         height: 5em;
         width: 5em;
         
-        }
-    
-    .imgProducto {
-        width: auto; /* Mantiene la relación de aspecto */
-        height: 100%; /* Ajusta la altura al contenedor */    
     }
 
     .card {
-        padding: 3%;
         border-color: #E4ECFF;
-        border-style: solid;
         padding-right: 0%;
     }
 

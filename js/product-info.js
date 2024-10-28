@@ -228,7 +228,9 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (productToAdd) {
           Swal.fire({
-            title: "¡Producto agregado al carrito!",
+            text: "¡Producto agregado al carrito!",
+            showConfirmButton: false,
+            timer: 1500,
             imageUrl:"img/system-solid-6-shopping-hover-shopping.webp"  ,
             imageWidth: 70, // Ancho del GIF
             imageHeight: 70, // Alto del GIF
@@ -375,7 +377,11 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
 } else {
   Swal.fire({
     text: "Por favor, completa todos los campos antes de enviar tu calificación",
-    icon: "warning"
+    confirmButtonText: "Continuar",
+    confirmButtonColor: "#e83b57",
+    imageUrl:"img/system-solid-55-error-hover-error-4.webp",
+    imageWidth: 70, // Ancho del GIF
+    imageHeight: 70, // Alto del GIF
   });
 }
 });
