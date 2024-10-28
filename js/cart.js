@@ -1,4 +1,4 @@
-let productsAdded = JSON.parse(localStorage.getItem("userCart"));
+let productsAdded = JSON.parse(localStorage.getItem("userCart")) ?? [];
 let productCard = document.getElementById("productCard");
 let keepBuying = document.getElementById("seguir");
 
@@ -40,7 +40,7 @@ function cartP(array) {
                     </div>
                 </div>
                 <div class="cantidad text-end">
-                    <p class="mb-0">Cantidad: <input type="text" id="numero" name="numero" value="${count}"required></p>
+                    <p class="mb-0">Cantidad: <input type="text" id="numero${i}" name="numero" value="${count}"required></p>
                 </div>
             </div>
             </div>
