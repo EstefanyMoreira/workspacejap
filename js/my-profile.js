@@ -13,7 +13,10 @@ function guardarDatos() {
     
     // validar campos requeridos
     if (!nombre || !email || !apellido) {
-        alert("Por favor, complete todos los campos obligatorios.");  
+        Swal.fire({
+            title: "Por favor, complete todos los campos obligatorios.",
+            icon: "warning"
+          }); 
         return;
     }
     
@@ -61,7 +64,10 @@ function guardarDatos() {
     // Vuelve a guardar el email en localStorage por si fue modificado
     localStorage.setItem("email", email)
 
-    alert("Datos guardados con exito");  
+    Swal.fire({
+        title: "Datos guardados con exito",
+        icon: "success"
+      });
 }
 
 // Verifica si el usuario tiene una imagen guardada y la muestra, si no tiene, muestra una imagen por defecto

@@ -14,7 +14,10 @@ if (contraseña!="" && email!=""){
     location.href="index.html"; // y luego me mande al index
     
 }else{
-    alert ("Falta completar usuario o contraseña");
+    Swal.fire({
+        title: "Falta completar usuario o contraseña",
+        icon: "warning"
+      });
 }
 });
 
