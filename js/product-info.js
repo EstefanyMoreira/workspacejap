@@ -227,7 +227,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let productToAdd = localStorage.getItem("productID");
         
         if (productToAdd) {
-            alert("¡Producto agregado al carrito!");
+          Swal.fire({
+            title: "¡Producto agregado al carrito!",
+            icon: "success"
+          });
+          
             addToCart(productToAdd);
         }
     });
@@ -366,7 +370,10 @@ document.getElementById('enviar_comentarios').addEventListener('submit', functio
   document.getElementById('calificacion').value = '';
 
 } else {
-  alert("Por favor, completa todos los campos antes de enviar tu calificación")
+  Swal.fire({
+    text: "Por favor, completa todos los campos antes de enviar tu calificación",
+    icon: "warning"
+  });
 }
 });
 
