@@ -175,7 +175,9 @@ footer p {
 }
 
 main {
-  min-height: calc(100vh - 210px); /*Esto lo tuve que comentar porque daba problemas en el carrito*/
+  min-height: calc(
+    100vh - 210px
+  ); /*Esto lo tuve que comentar porque daba problemas en el carrito*/
 }
 
 a.custom-card,
@@ -287,7 +289,7 @@ a.custom-card:hover {
 
 /* Paleta por defecto (modo día) */
 :root {
-  --color-fondo: #FAF9FB;
+  --color-fondo: #faf9fb;
   --color-fondo-invertidos: #1c0e34;
   --color-primario: #1c1c1c;
   --color-secundario: #000000;
@@ -295,17 +297,16 @@ a.custom-card:hover {
   --color-boton-azul-hover: #31195c;
   --check-valido: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%231c0e34' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   --radio-btn-azul: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%231c0e34'/%3e%3c/svg%3e");
-  --color-fondo-celeste: #E4ECFF;
+  --color-fondo-celeste: #e4ecff;
   --borde: 0px;
 }
-
 
 /* Paleta para el modo noche */
 body.modo-noche {
   --color-fondo: #1c0e34;
-  --color-fondo-invertidos: #FAF9FB;
+  --color-fondo-invertidos: #faf9fb;
   --color-primario: #f1f1f1;
-  --color-secundario:#ffffff;
+  --color-secundario: #ffffff;
   --color-boton-azul: #2e77d7;
   --color-boton-azul-hover: #0056b3;
   --check-valido: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%232e77d7' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -323,4 +324,14 @@ body.modo-noche {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+}
+
+#button-cart {
+  background: #e83b57;
+  margin-left: 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  height: 1.7rem;
+  width: 1.7rem;
 }
