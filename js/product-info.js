@@ -1,3 +1,4 @@
+import { updateCartCount } from "./utils/updateCartCount.js";
 document.addEventListener("DOMContentLoaded", function () {
   // obtener nombre de la página
   function getPageNameFromURL() {
@@ -200,16 +201,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
 
-// función que crea un array y agrega los datos del producto seleccionado
+      // función que crea un array y agrega los datos del producto seleccionado
 
       function addToCart(productId) {
         let cart = JSON.parse(localStorage.getItem("userCart")) || [];
 
         // Buscar si el producto ya está en el carrito
-        const productM = cart.find(product => product.productId === productId);
+        const productM = cart.find(
+          (product) => product.productId === productId
+        );
 
-        const productToCart = {productId, name: product.name, cost: product.cost, currency: product.currency, firstImageUrl, count: 1}
-        
+        const productToCart = {
+          productId,
+          name: product.name,
+          cost: product.cost,
+          currency: product.currency,
+          firstImageUrl,
+          count: 1,
+        };
+
         if (productM) {
           //Si el producto ya está en el carrito, incrementa la cantidad del producto
           productM.count += 1;
@@ -218,38 +228,42 @@ document.addEventListener("DOMContentLoaded", function () {
           // Si el producto no está en el carrito, lo agrega al array
           cart.push(productToCart);
           localStorage.setItem("userCart", JSON.stringify(cart));
-        }   
+        }
+        updateCartCount();
       }
-      
-// botón carrito que solo agrega el producto
+
+      // botón carrito que solo agrega el producto
       const btnBlockRojo = document.getElementById("btnBlockRojo");
-      btnBlockRojo.addEventListener("click", function() {
+      btnBlockRojo.addEventListener("click", function () {
         let productToAdd = localStorage.getItem("productID");
-        
+
         if (productToAdd) {
           Swal.fire({
             text: "¡Producto agregado al carrito!",
             showConfirmButton: false,
             timer: 1500,
-            imageUrl:"img/system-solid-6-shopping-hover-shopping.webp"  ,
+            imageUrl: "img/system-solid-6-shopping-hover-shopping.webp",
             imageWidth: 70, // Ancho del GIF
             imageHeight: 70, // Alto del GIF
 
-  imageAlt: 'Icono personalizado',        });
-          
-            addToCart(productToAdd);
-        }
-    });
+            imageAlt: "Icono personalizado",
+          });
 
-// botón de comprar que agrega producto al carrito y redirige al mismo
-       const btnRojo = document.getElementById("btnRojo");
-       btnRojo.addEventListener("click", function() {
-       let productToAdd = localStorage.getItem("productID");
-        
+          addToCart(productToAdd);
+        }
+      });
+
+      // botón de comprar que agrega producto al carrito y redirige al mismo
+      const btnRojo = document.getElementById("btnRojo");
+      btnRojo.addEventListener("click", function () {
+        let productToAdd = localStorage.getItem("productID");
+
         if (productToAdd) {
-            addToCart(productToAdd);
-            window.location.href = "cart.html";
-        }})}
+          addToCart(productToAdd);
+          window.location.href = "cart.html";
+        }
+      });
+    }
   });
 
   // el operador ?? se encarga de igualar la variable al valor de la derecha en caso de que la expresion de la izquierda resulte en undefined.
@@ -323,102 +337,98 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Para agregar commentarios:
+  // Llamo al botón de enviar comentarios y le pido que detecte el evento submit de envio de forms
 
-// Para agregar commentarios:
-// Llamo al botón de enviar comentarios y le pido que detecte el evento submit de envio de forms
+  document
+    .getElementById("enviar_comentarios")
+    .addEventListener("submit", function (event) {
+      // Este metodo lo que hace es evitar que un formulario se envíe automáticamente y la página se recargue
+      // pemrite manejar los datos primero. sin esto no funciona nada y da error http 405
+      event.preventDefault();
 
-document.getElementById('enviar_comentarios').addEventListener('submit', function(event) {
+      // Capturar datos del formulario
+      // tomo el email del local storage con su clave
 
-  // Este metodo lo que hace es evitar que un formulario se envíe automáticamente y la página se recargue
-  // pemrite manejar los datos primero. sin esto no funciona nada y da error http 405
-  event.preventDefault()
+      let user = localStorage.getItem("email");
 
-  // Capturar datos del formulario
-  // tomo el email del local storage con su clave 
+      let commentText = document.getElementById("comentarios").value;
+      let commentVote = document.getElementById("calificacion").value;
 
-  let user = localStorage.getItem("email")
+      // Verifica que el comentario y la calificacion tengan valor, si alguno de los dos está vacío, se muestra una alerta
+      if (commentText && commentVote) {
+        //defino un comentario nuevo para que use la funcion addcomments
 
-  let commentText = document.getElementById("comentarios").value;
-  let commentVote = document.getElementById("calificacion").value;
+        const newComment = {
+          user: user,
+          description: commentText,
+          score: parseInt(commentVote),
+          product: productId,
+          dateTime: new Date().toISOString(), // Timestamp actual
+        };
 
-  // Verifica que el comentario y la calificacion tengan valor, si alguno de los dos está vacío, se muestra una alerta
-  if (commentText && commentVote){
+        // Ahora si, agregar el comentario y mostrar los comentarios actualizados
 
-  //defino un comentario nuevo para que use la funcion addcomments
-  
-  const newComment = {
-    user: user,
-    description: commentText,
-    score: parseInt(commentVote) ,
-    product: productId,
-    dateTime: new Date().toISOString(), // Timestamp actual
-  };
+        addComment(newComment);
+        showComments([
+          ...apiComments,
+          ...localComments.filter((comment) => comment.product === productId),
+        ]);
 
-  // Ahora si, agregar el comentario y mostrar los comentarios actualizados
-  
-  addComment(newComment);
-  showComments([
-    ...apiComments,
-    ...localComments.filter((comment) => comment.product === productId),
-  ]);
+        // limpiar el texto en el formulario
+        document.getElementById("enviar_comentarios").reset();
 
-  // limpiar el texto en el formulario
-  document.getElementById('enviar_comentarios').reset();
-  
-  // deja los círculos sin color y limpia la calificación
-  let circles = document.querySelectorAll('#calificacion-container i');
+        // deja los círculos sin color y limpia la calificación
+        let circles = document.querySelectorAll("#calificacion-container i");
 
-  circles.forEach(function(circle) {
-    circle.classList.replace('full-circle', 'empty-circle');
-  });
+        circles.forEach(function (circle) {
+          circle.classList.replace("full-circle", "empty-circle");
+        });
 
-  document.getElementById('calificacion').value = '';
-
-} else {
-  Swal.fire({
-    text: "Por favor, completa todos los campos antes de enviar tu calificación",
-    confirmButtonText: "Continuar",
-    confirmButtonColor: "#e83b57",
-    imageUrl:"img/system-solid-55-error-hover-error-4.webp",
-    imageWidth: 70, // Ancho del GIF
-    imageHeight: 70, // Alto del GIF
-  });
-}
-});
-
-
-// Círculos para los comentarios que se envian
-const circles = document.querySelectorAll("#calificacion-container i");
-const hiddenInput = document.getElementById("calificacion");
-
-circles.forEach((circle, index) => {
-  circle.addEventListener("click", () => {
-    
-    hiddenInput.value = circle.getAttribute("data-value");// Actualiza input oculto con el valor del círculo seleccionado
-    
-    // Cambia visualmente los círculos
-    circles.forEach((c, i) => {
-      if (i <= index) {
-        c.classList.replace("empty-circle", "full-circle");
+        document.getElementById("calificacion").value = "";
       } else {
-        c.classList.replace("full-circle", "empty-circle");
+        Swal.fire({
+          text: "Por favor, completa todos los campos antes de enviar tu calificación",
+          confirmButtonText: "Continuar",
+          confirmButtonColor: "#e83b57",
+          imageUrl: "img/system-solid-55-error-hover-error-4.webp",
+          imageWidth: 70, // Ancho del GIF
+          imageHeight: 70, // Alto del GIF
+        });
       }
     });
+
+  // Círculos para los comentarios que se envian
+  const circles = document.querySelectorAll("#calificacion-container i");
+  const hiddenInput = document.getElementById("calificacion");
+
+  circles.forEach((circle, index) => {
+    circle.addEventListener("click", () => {
+      hiddenInput.value = circle.getAttribute("data-value"); // Actualiza input oculto con el valor del círculo seleccionado
+
+      // Cambia visualmente los círculos
+      circles.forEach((c, i) => {
+        if (i <= index) {
+          c.classList.replace("empty-circle", "full-circle");
+        } else {
+          c.classList.replace("full-circle", "empty-circle");
+        }
+      });
+    });
   });
-});
 
-// Productos relacionados
+  // Productos relacionados
 
-const RELACIONADOS = PRODUCT_INFO_URL + productId + EXT_TYPE;
+  const RELACIONADOS = PRODUCT_INFO_URL + productId + EXT_TYPE;
 
-getProductInfo(RELACIONADOS).then(function (resultObj) {
-  if (resultObj.status === "ok") {
-    const product = resultObj.data.relatedProducts;
+  getProductInfo(RELACIONADOS).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      const product = resultObj.data.relatedProducts;
 
-    const relac = document.getElementById("related-products");
-    relac.innerHTML = ``;
-    product.forEach(product => {
-    relac.innerHTML += `
+      const relac = document.getElementById("related-products");
+      relac.innerHTML = ``;
+      product.forEach((product) => {
+        relac.innerHTML += `
         <div class="col-5 col-md-5 col-lg-4 card product-item" data-product-id="${product.id}">
           <img src="${product.image}" class="card-img-top"/>
         <div class="card-body">
@@ -426,6 +436,8 @@ getProductInfo(RELACIONADOS).then(function (resultObj) {
         </div>
         </div>
     `;
-  })} selectedProducts();
-});
+      });
+    }
+    selectedProducts();
+  });
 });
