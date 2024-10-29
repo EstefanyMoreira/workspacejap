@@ -76,7 +76,9 @@ function guardarDatos() {
         imageUrl:"img/system-solid-31-check-hover-check-2.webp"  ,
         imageWidth: 70, // Ancho del GIF
         imageHeight: 70, // Alto del GIF
-      });
+      }).then(() => {
+        location.reload(); // Recargar la página después de que el usuario cierre el mensaje de éxito
+    });
 }
 
 // Verifica si el usuario tiene una imagen guardada y la muestra, si no tiene, muestra una imagen por defecto
