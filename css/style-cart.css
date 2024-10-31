@@ -250,6 +250,12 @@ input:focus {
     font-weight: 700;
 }
 
+/* Ocultar los spinners*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 /*Media queries para pantalla small */
 @media (max-width: 767px) {
