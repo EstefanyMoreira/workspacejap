@@ -86,8 +86,8 @@ function cartP(array) {
 
 
         if (product) {
-            const cantidad = parseInt(this.value) || 0; // Asegurar un valor mínimo de 1
-            if (cantidad < 1) {
+            const cantidad = parseInt(this.value) ; 
+            if (cantidad <= 0) { // Asegurar un valor mínimo de 1
                 Swal.fire({
                     text: "Ingrese un valor mayor a 1 o elimine el producto",
                     confirmButtonText: "Continuar",
@@ -96,8 +96,8 @@ function cartP(array) {
                     imageWidth: 70, // Ancho del GIF
                     imageHeight: 70, // Alto del GIF
                   });
-                  this.value = 1;
-                  cantidad = 1;
+                  this.value = 1; // establece el valor del input en 1 
+              
                 }
 
 
