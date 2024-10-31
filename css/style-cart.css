@@ -166,6 +166,7 @@ input {
     overflow: hidden;
     border: none;
     background-color: #ffffff;
+    height: fit-content;
 
 }
 
