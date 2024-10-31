@@ -77,8 +77,8 @@ select {
 }
 
 select:focus {
-    border: 2px solid #1c0e34; /* Cambia el borde al enfocar */
-    outline: none; /* Asegúrate de que no haya borde adicional */
+    border: 2px solid #1c0e34; 
+    outline: none; 
 }
 
 /*boton rojo basura*/
@@ -132,7 +132,10 @@ input {
     
     aspect-ratio: 1/1;
 }
-
+input:focus {
+    border: 2.5px solid  #1c0e34; 
+    outline: none; 
+}
 
 /*subtotal text y precio*/
 .subtotal {
