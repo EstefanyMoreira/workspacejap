@@ -68,8 +68,9 @@ let userCart = JSON.parse(localStorage.getItem("userCart"));
 let cartCount = userCart.reduce((acc, e) => acc + e.count, 0);
 
 profileContainer.innerHTML += `${iconDropDown} <ul class="dropdown-menu" id="dropdownMenu">
-  <li><a href="cart.html">Mi Carrito</a><button id="button-cart">${cartCount}</button></li>
+  
   <li><a href="my-profile.html">Mi Perfil</a></li>
+  <li id="primerElementoli"><a href="cart.html">Mi Carrito</a><button id="button-cart">${cartCount}</button></li>
   <li><a id="logout" href="login.html">Cerrar Sesión</a></li>
 </ul>`;
 

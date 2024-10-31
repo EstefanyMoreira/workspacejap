@@ -334,4 +334,20 @@ body.modo-noche {
   border-radius: 7px;
   height: 1.7rem;
   width: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*para ajustar el badge del carrito en el dropdown*/
+
+#primerElementoli {
+  display: flex;
+  justify-content: left;
+}
+
+.dropdown-menu li {
+  display: flex;
+  justify-content: left;
 }
