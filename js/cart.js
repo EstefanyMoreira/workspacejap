@@ -75,7 +75,6 @@ function cartP(array) {
     });
 }
 
-
     const quantityInputs = document.querySelectorAll(".cantidadInput");
     // Asignar evento de cambio de cantidad a cada input
     quantityInputs.forEach((input) => {
@@ -86,7 +85,8 @@ function cartP(array) {
 
 
         if (product) {
-            const cantidad = parseInt(this.value) ; 
+            let cantidad = this.value.trim() === "" ? 1 : parseInt(this.value);
+
             if (cantidad <= 0) { // Asegurar un valor mínimo de 1
                 Swal.fire({
                     text: "Ingrese un valor mayor a 1 o elimine el producto",
@@ -96,10 +96,9 @@ function cartP(array) {
                     imageWidth: 70, // Ancho del GIF
                     imageHeight: 70, // Alto del GIF
                   });
-                  this.value = 1; // establece el valor del input en 1 
-              
-                }
-
+                this.value = 1; // establece el valor del input en 1 
+                cantidad = 1;
+            }
 
             // Calcular y actualizar el subtotal
             const newSubtotal = product.cost * cantidad;
@@ -110,9 +109,17 @@ function cartP(array) {
             product.count = cantidad;
             localStorage.setItem("userCart", JSON.stringify(productsAdded));
         }
+
         });
     });
 
+    quantityInputs.forEach((input) => {
+        input.addEventListener("change", function () {
+            if (this.value.trim() === "") {
+                this.value = 1;
+            }
+        });
+    });
 
   // Si el carrito está vacío, muestra un mensaje indicándolo
   if (array.length === 0) {
