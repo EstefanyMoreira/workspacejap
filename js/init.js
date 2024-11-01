@@ -103,6 +103,8 @@ let logout = document.getElementById("logout");
 logout.addEventListener("click", () => {
   localStorage.removeItem("email");
   localStorage.removeItem("modo");
+  localStorage.removeItem("userCart");
+  localStorage.removeItem("selectedCurrency");
 });
 
 // Función para aplicar el modo día/noche
