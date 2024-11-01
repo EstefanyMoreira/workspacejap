@@ -65,7 +65,7 @@
       </div>
     </nav>
 
-    <main class="row d-flex">
+    <main class="row d-flex m-0">
       <div class="bloque-general row">
         <div class="col-lg-12">
           <p class="titulo">Carrito de compras</p>
@@ -88,11 +88,14 @@
             <div class="lista d-flex justify-content-between">
               <p>Total:</p>
              
-              <p class="bold">
+              <div class="bold d-flex col-9 justify-content-end align-items-center">
                 <select name="select">
-                  <option value="value1">UYU</option>
-                  <option value="value2" selected>USD</option>
-                </select>12500</p>
+                  <option value="UYU">UYU</option>
+                  <option value="USD" selected>USD</option>
+                </select>
+                <p id="total"></p>
+              </div>
+                
             </div>
 
             <!-- Botones -->
