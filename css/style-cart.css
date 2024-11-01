@@ -246,6 +246,10 @@ input:focus {
     margin-bottom: 2%;
 }
 
+#total {
+    margin-bottom: 0;
+}
+
 .bold {
     font-weight: 700;
 }
