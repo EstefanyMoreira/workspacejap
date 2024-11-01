@@ -171,9 +171,14 @@ function updateTotal(array) {
         }
 
         newTotal += convertedSubtotal;
+        
     });
 
-    totalCurrency.innerHTML = `${newTotal}`;
+
+
+    // Detallito, dar formato al total con puntos y comas
+    totalCurrency.innerHTML = `${newTotal.toLocaleString('es-UY', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
 }
 
 currencySelector.addEventListener("change", function () {
