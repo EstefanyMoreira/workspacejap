@@ -64,7 +64,7 @@ let iconDropDown =
   '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" id="dropDownIcon" width="12.000000pt" height="12.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"fill="#000000" stroke="none"><path d="M652 3623 c-68 -33 -102 -102 -87 -180 6 -34 112 -143 963 -995 852 -851 961 -957 995 -963 94 -18 30 -76 1056 948 712 711 948 953 963 986 54 118 -47 240 -179 216 -34 -6 -137 -105 -921 -888 l-882 -882 -873 872 c-614 614 -883 877 -909 888 -47 19 -84 19 -126 -2z"/></g></svg>';
 
 let profileContainer = document.getElementsByClassName("perfil")[0];
-let userCart = JSON.parse(localStorage.getItem("userCart"));
+let userCart = JSON.parse(localStorage.getItem("userCart")) ?? [];
 let cartCount = userCart.reduce((acc, e) => acc + e.count, 0);
 
 profileContainer.innerHTML += `${iconDropDown} <ul class="dropdown-menu" id="dropdownMenu">
