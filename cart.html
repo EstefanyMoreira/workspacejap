@@ -125,14 +125,49 @@
               <button
                 type="button"
                 class="btnRojo mb-2"
-                value="checkout"
-                id="checkout"
+                id="completarDatos"
               >
-                Checkout
+                Completar datos de envío
               </button>
               <button type="button " class="btnAzul" value="seguir" id="seguir">
                 Seguir comprando
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de dirección y forma de pago -->
+
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="staticBackdropLabel">¡Completá tus datos para finalizar tu compra!</h1>
+            </div>
+            <div class="modal-body">
+            <h2>Dirección de envío</h2>
+            <form>
+              <label for="dpto">Departamento</label>
+              <input type="text" id="dpto" required>
+              <label for="loc">Localidad</label>
+              <input type="text" id="loc" required><br>
+              <label for="calle">Calle</label>
+              <input type="text" id="calle" required>
+              <label for="nro">N°</label>
+              <input type="number" class="input-small" id="nro" required>
+              <label for="esq">Esquina</label>
+              <input type="text" id="esq" required>
+              <h2>Forma de pago</h2>
+              <select id="pago" name="pago" class="forma-pago">
+              <option value="" selected disabled>Elige una forma de pago</option>
+              <option value="crédito">Tarjeta de crédito</option>
+              <option value="transferencia">Transferencia bancaria</option>
+            </select>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btnFin btn-primary" id="finalizar">Finalizar compra</button>
             </div>
           </div>
         </div>

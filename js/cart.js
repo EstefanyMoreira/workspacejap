@@ -210,9 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     cartP(productsAdded);
-<<<<<<< Updated upstream
-});
-=======
+
 });
 
 // Botón que abre modal
@@ -266,4 +264,5 @@ document.getElementById("envio").addEventListener('change', function() {
     calcularEnvio();
 });
 
->>>>>>> Stashed changes
+
+
