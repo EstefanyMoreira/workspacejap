@@ -198,3 +198,21 @@ document.addEventListener("DOMContentLoaded", function () {
     
     cartP(productsAdded);
 });
+
+// Botón que abre modal
+
+const btnCompletarDatos = document.getElementById('completarDatos');
+    const Modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+
+    btnCompletarDatos.addEventListener('click', function() {
+      Modal.show();
+    });
+
+    document.getElementById('finalizar').addEventListener('click', function() {
+        Modal.hide();
+      });
+
+
+function showAlertError() {
+        document.getElementById("alert-danger").classList.add("show");
+}

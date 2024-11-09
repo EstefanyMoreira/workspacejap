@@ -261,6 +261,102 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
+/* estilo del modal*/
+
+h1 {
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    font-size: 1rem;
+    color: rgb(92, 92, 92);
+    background-color: rgb(224, 223, 223);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    border: none;
+}
+
+
+.modal{
+    backdrop-filter: blur(2px);
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-content {
+    justify-content: center;
+    border: 5px solid #c13149;
+    border-radius: 30px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    margin: 15% auto;
+    padding: 20px;
+    width: 40rem;
+}
+
+label {
+    font-weight: 300;
+    padding-bottom: 3%;
+}
+
+input {
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #c8dce9;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    height: 1rem;
+    width: 10rem;
+    margin-right: 10px;
+}
+
+.input-small {
+    width: 3.7rem;
+}
+
+.forma-pago {
+    width: 15rem;
+}
+  
+select {
+    border: 2px solid #c8dce9;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+option {
+    font-size: 14px;
+}
+
+.btnFin {
+    background: #e83b57;
+    color: #ffffff;
+    font-weight: 700;
+    align-items: right;
+    border: none;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 40%;
+    transition: background-color 0.5s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    margin: 20px auto;
+}
+    
+.btnFin:hover {
+    background: #c13149;
+}
+
+
 /*Media queries para pantalla small */
 @media (max-width: 767px) {
     .titulo {
