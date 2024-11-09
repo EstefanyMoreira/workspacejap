@@ -77,25 +77,47 @@
         ></div>
 
         <!-- Sección derecha: lista detalle de compra -->
-        <div class="contGeneral2 col-lg-3 col-md-3 col-sm-12">
-          <p class="productName">Detalle de compra</p>
+        <div class="contGeneral2 col-lg-4 col-md-3 col-sm-12">
+          <p class="productName mb-2">Detalle de compra</p>
           <div class="row">
-            <div class="lista d-flex justify-content-between">
+            <div class="lista d-flex justify-content-between align-items-center">
               <p>Envío:</p>
-              <p class="bold">Gratis</p>
+                <form id="formulario_tipoEnvio justify-content-end align-items-center">
+                  <select id="envio" name="envio">
+                    <option value="Premium">Premium (2 a 5 días)</option>
+                    <option value="Express">Express (5 a 8 días)</option>
+                    <option value="Standard">Standard (12 a 15 días)</option>
+                  </select>
+                </form>
             </div>
 
-            <div class="lista d-flex justify-content-between">
-              <p>Total:</p>
+            <div class="lista d-flex justify-content-between align-items-center mt-2">
+              <p>Subtotal:</p>
              
-              <div class="bold d-flex col-9 justify-content-end align-items-center">
-                <select name="select">
+              <div class="bold d-flex col-9  justify-content-end align-items-center">
+                <select name="select" class="me-2 ">
                   <option value="UYU">UYU</option>
                   <option value="USD" selected>USD</option>
                 </select>
                 <p id="total"></p>
               </div>
+            </div>
+
+              <div class="lista d-flex justify-content-between align-items-center mt-2">
+                <p> Valor de Envio:</p>
+               
+                <div class="bold d-flex col-9  justify-content-end align-items-center">
                 
+                  <p id="resultadoEnvio"></p>
+                </div>
+              </div>
+
+              <div class="lista d-flex justify-content-between align-items-center mt-2">
+                <p>Total:</p>
+               
+               
+              </div>
+
             </div>
 
             <!-- Botones -->
