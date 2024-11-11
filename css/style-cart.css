@@ -68,13 +68,16 @@ main {
 /*Estilo elegir la moneda*/
 
 select {
-    border-radius: 8px;
+    height: 2.2em;
+    border-radius: 9px;
     border-color: #c0d0f9;
     border-width: 2px;
-    margin-right: 5px;
+    padding: 2px;
+    text-align: center;
     color: #1c0e34;
     font-weight: 600;
 }
+
 
 select:focus {
     border: 2px solid #1c0e34; 
@@ -178,6 +181,9 @@ input:focus {
     /* Espacio entre los elementos */
 }
 
+
+label {
+   font-size:  0.9rem ; }
 .contGeneral2 {
 
     padding: 3%;
@@ -261,6 +267,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
+
 /* estilo del modal*/
 
 h1 {
@@ -301,12 +308,14 @@ h2 {
     width: 40rem;
 }
 
-label {
+.modal-content label {
+
     font-weight: 300;
     padding-bottom: 3%;
 }
 
-input {
+.modal-content input {
+
     padding: 10px;
     font-size: 14px;
     border: 2px solid #c8dce9;

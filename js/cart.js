@@ -13,12 +13,14 @@ keepBuying.addEventListener("click", function () {
 });
 
 
+let total = 0;
+
 // Mostrar los productos en el carrito
 function cartP(array) {
     productCard.innerHTML = "";
+     total = 0;
 
-    let total = 0;
-
+   
     for (let i = 0; i < array.length; i++) {
     // Desestructuración de datos
     const { productId, name, cost, currency, firstImageUrl, count } = array[i];
@@ -59,7 +61,7 @@ function cartP(array) {
             </div>
         </div>`;
     }
-    totalCurrency.innerHTML = `${total}`;
+    totalCurrency.innerHTML = `${total.toFixed(2)}`;
 
     // Añade eventos de eliminación y cambio de cantidad
     Trash(array);
@@ -79,6 +81,11 @@ function cartP(array) {
         `;
         totalCurrency.innerHTML = `0`;
     }
+
+   console.log(total);
+
+
+   
 }
 
 // Función para asignar eventos de eliminación de productos
@@ -96,6 +103,8 @@ function Trash(array) {
             localStorage.setItem("userCart", JSON.stringify(array));
 
             updateCartCount();
+            
+
 
             cartP(productsAdded); // Actualizar la vista del carrito
         });
@@ -139,6 +148,8 @@ function Quantity(array) {
             // Llamar a la función para actualizar el badge del carrito y la función para recalcular el total
             updateCartCount();
             updateTotal(array);
+          
+
         });
 
         input.addEventListener("change", function () {
@@ -147,6 +158,8 @@ function Quantity(array) {
             }
             updateCartCount();
             updateTotal(array);
+          
+
         });
     });
 }
@@ -177,15 +190,15 @@ function updateTotal(array) {
 
 
     // Detallito, dar formato al total con puntos y comas
+    total = newTotal;  // Actualizar el total global
     totalCurrency.innerHTML = `${newTotal.toLocaleString('es-UY', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-
+    calcularEnvio();
+    
 }
 
 currencySelector.addEventListener("change", function () {
-    // Guardar la currency en el local
     localStorage.setItem("selectedCurrency", currencySelector.value);
-    // Actualiza el total al cambiar la currency
-    updateTotal(productsAdded);
+    updateTotal(productsAdded);  // Recalcular total con la nueva moneda
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -197,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     cartP(productsAdded);
+
 });
 
 // Botón que abre modal
@@ -212,7 +226,43 @@ const btnCompletarDatos = document.getElementById('completarDatos');
         Modal.hide();
       });
 
-
+// esto que es???
 function showAlertError() {
         document.getElementById("alert-danger").classList.add("show");
 }
+
+
+//calculo de costo de envio
+
+function calcularEnvio() {
+    let envioSeleccionado = document.getElementById("envio").value;
+    let valorEnvio = 0;
+
+
+    //  porcentajes según el tipo de envio
+    if (envioSeleccionado === "Premium") {
+        valorEnvio = 0.15;  
+    } else if (envioSeleccionado === "Express") {
+        valorEnvio = 0.07;  
+    } else if (envioSeleccionado === "Standard") {
+        valorEnvio = 0.05;  }
+
+    // valor del envio
+    const valorFinalEnvio = total * valorEnvio;
+
+
+     
+    // mostrar e insertar  el resultado del costo de envio
+    document.getElementById("resultadoEnvio").textContent = `$${valorFinalEnvio.toLocaleString('es-UY', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+    
+}
+
+
+// llamo a `calcularEnvio` cada vez que el total cambie
+document.getElementById("envio").addEventListener('change', function() {
+    calcularEnvio();
+});
+
+
+
