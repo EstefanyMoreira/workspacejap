@@ -314,6 +314,7 @@ h2 {
     padding-bottom: 3%;
 }
 
+
 .modal-content input {
 
     padding: 10px;
@@ -327,7 +328,7 @@ h2 {
     margin-right: 10px;
 }
 
-.input-small {
+.input-small.form-control {
     width: 3.7rem;
 }
 
