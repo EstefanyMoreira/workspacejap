@@ -218,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const btnCompletarDatos = document.getElementById('completarDatos');
     const Modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
-    let envio = document.getElementById("envio").value;
 
     btnCompletarDatos.addEventListener('click', function() {
         let envio = document.getElementById("envio").value;
@@ -228,7 +227,9 @@ const btnCompletarDatos = document.getElementById('completarDatos');
         Swal.fire({
             icon: 'error',
             title: 'Tipo de envío no seleccionado',
-            text: 'Por favor, selecciona un tipo de envío antes de continuar.'
+            text: 'Por favor, selecciona un tipo de envío antes de continuar.',
+            confirmButtonText: "Continuar",
+            confirmButtonColor: "#e83b57",
         });
     }
     });
@@ -246,16 +247,8 @@ btnFinalizarCompra.addEventListener('click', function(event) {
                 timer: 3000
             });
 
-            // Mostrar la animación de Lordicon
-            const animacionContainer = document.getElementById('animacionContainer');
-            animacionContainer.style.display = 'block';
         }
     });
-
-// esto que es???
-function showAlertError() {
-        document.getElementById("alert-danger").classList.add("show");
-}
 
 
 //CALCULO DE COSTOS DE ENVIO Y TOTAL
