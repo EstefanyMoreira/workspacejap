@@ -193,6 +193,7 @@ function updateTotal(array) {
     total = newTotal;  // Actualizar el total global
     totalCurrency.innerHTML = `${newTotal.toLocaleString('es-UY', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     calcularEnvio();
+   
     
 }
 
@@ -257,11 +258,31 @@ function showAlertError() {
 }
 
 
-//calculo de costo de envio
+//CALCULO DE COSTOS DE ENVIO Y TOTAL
+
+// esto tiene que estar fuera de los bloques para que sea global, sin ROMPE todo 
+let totalFinal = 0 
+let valorFinalEnvio = 0;
+
+
+//esta funcion se llamara TOTAL FINAL (total de subtotales, mas costo de envio)
+
+function calcularTotalFinal(){
+
+    totalFinal = total + valorFinalEnvio; 
+    console.log("Total Final: ", totalFinal);
+
+    // agrgarlo con formato al contenedor
+    document.getElementById("resultadoTotalFinal").textContent = `$${totalFinal.toLocaleString('es-UY', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+    
+    
+
+}
 
 function calcularEnvio() {
     let envioSeleccionado = document.getElementById("envio").value;
-    let valorEnvio = 0;
+     let valorEnvio = 0;
 
 
     //  porcentajes según el tipo de envio
@@ -273,8 +294,9 @@ function calcularEnvio() {
         valorEnvio = 0.05;  }
 
     // valor del envio
-    const valorFinalEnvio = total * valorEnvio;
+    valorFinalEnvio = total * valorEnvio;
 
+    calcularTotalFinal()
 
      
     // mostrar e insertar  el resultado del costo de envio
@@ -288,6 +310,7 @@ function calcularEnvio() {
 document.getElementById("envio").addEventListener('change', function() {
     calcularEnvio();
 });
+
 
 
 // Verificación de campos obligatorios
