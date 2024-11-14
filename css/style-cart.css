@@ -128,7 +128,6 @@ select:focus {
 
 /*estilo input*/
 input {
-    text-align: center;
     border: 2.5px solid #E4ECFF;
     border-radius: 8px;
     width: 11%;
@@ -183,7 +182,8 @@ input:focus {
 
 
 label {
-   font-size:  0.9rem ; }
+   font-size:  0.9rem ;
+font-weight: 600; }
 .contGeneral2 {
 
     padding: 3%;
@@ -281,9 +281,10 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bolder;
-    color: black;
+    color: #1c0e34;
+    font-weight: 600;
     padding-top: 10px;
     padding-bottom: 5px;
 }
@@ -298,50 +299,74 @@ h2 {
     transition: all 0.2s ease-in-out;
 }
 
+.modal-title {
+
+    background: rgb(228, 236, 255);
+    color: #1c0e34;
+    border-radius: 9px;
+    padding: 1em 2em ;
+}
 .modal-content {
     justify-content: center;
-    border: 5px solid #c13149;
     border-radius: 30px;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
     margin: 15% auto;
     padding: 20px;
-    width: 40rem;
+    width: 45rem;
 }
 
 .modal-content label {
 
-    font-weight: 300;
+    font-weight: 500;
     padding-bottom: 3%;
 }
 
 
 .modal-content input {
 
-    padding: 10px;
     font-size: 14px;
     border: 2px solid #c8dce9;
     border-radius: 10px;
     background-color: #ffffff;
     color: #000000;
-    height: 1rem;
-    width: 10rem;
+    height: 2.2rem;
+    width: 100%;
     margin-right: 10px;
 }
 
+.modal-content input:focus {
+    box-shadow: none !important;
+
+}
 .input-small.form-control {
-    width: 3.7rem;
+    width: 100%;
+    height: 2.2rem;
+    margin: 0;
 }
 
 .forma-pago {
     width: 15rem;
 }
   
-select {
+select.form-control {
+    height: 2.5em;
+    padding: 0.2em 0.5em;
     border: 2px solid #c8dce9;
     border-radius: 10px;
     background-color: #ffffff;
     font-size: 14px;
+    font-weight: 600 ;
+    border-color: #c0d0f9;
 }
+
+.form-control:focus {
+    border: 2px solid #1c0e34;
+    outline: none;
+   
+    background-color: #fff;
+    
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgba(13, 110, 253, .25);}
 
 option {
     font-size: 14px;
