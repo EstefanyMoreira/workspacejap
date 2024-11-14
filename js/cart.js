@@ -218,14 +218,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const btnCompletarDatos = document.getElementById('completarDatos');
     const Modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+    let envio = document.getElementById("envio").value;
 
     btnCompletarDatos.addEventListener('click', function() {
+        let envio = document.getElementById("envio").value;
+        if (envio){ 
       Modal.show();
+    }else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Tipo de envío no seleccionado',
+            text: 'Por favor, selecciona un tipo de envío antes de continuar.'
+        });
+    }
     });
+   
+    let btnFinalizarCompra = document.getElementById('finalizar');
+btnFinalizarCompra.addEventListener('click', function(event) {
+    event.preventDefault(); // Previene el comportamiento predeterminado del botón
+    if (verificarCampos()) { 
+        Modal.hide(); // Solo oculta el modal si la verificación es exitosa
+            Swal.fire({
+                //icon: 'success',
+                title: 'Procedimiento realizado con éxito',
+                html: '<lord-icon src="https://cdn.lordicon.com/twsqddew.json" trigger="loop" delay="1000" colors="primary:#1c0e34,secondary:#e83b57" style="width:250px;height:250px"></lord-icon><p>¡Gracias por tu compra!</p>',
+                showConfirmButton: false,
+                timer: 3000
+            });
 
-    document.getElementById('finalizar').addEventListener('click', function() {
-        Modal.hide();
-      });
+            // Mostrar la animación de Lordicon
+            const animacionContainer = document.getElementById('animacionContainer');
+            animacionContainer.style.display = 'block';
+        }
+    });
 
 // esto que es???
 function showAlertError() {
@@ -287,3 +312,38 @@ document.getElementById("envio").addEventListener('change', function() {
 });
 
 
+
+// Verificación de campos obligatorios
+function verificarCampos(){ 
+  
+    let departamento = document.getElementById("dpto").value;
+    let localidad = document.getElementById("loc").value;
+    let calle = document.getElementById("calle").value;
+    let numero = document.getElementById("nro").value;
+    let pago = document.getElementById("pago").value;
+
+    if (!departamento || !localidad || !calle || !numero || !pago) {
+        Swal.fire({
+            text: "Por favor, complete todos los campos obligatorios.",
+            confirmButtonText: "Continuar",
+            confirmButtonColor: "#e83b57",
+            imageUrl: "img/system-solid-55-error-hover-error-4.webp",
+            imageWidth: 50, // Ancho del GIF
+            imageHeight: 50, // Alto del GIF
+            customClass: { 
+                popup: 'swal2-modal-sobre-modal' //swal.fire sobre modal
+            }
+        });
+        return false; // Retorna false si hay campos vacíos
+    }
+return true; // Retorna true si todos los campos están completos
+}
+
+// Aplicar estilos para que Swal.fire se muestra sobre el modal 
+const style = document.createElement('style'); 
+style.innerHTML = ` 
+.swal2-modal-sobre-modal { 
+z-index: 2000 !important; /* Asignar un valor alto para estar encima del modal */ 
+} 
+`; 
+document.head.appendChild(style);
