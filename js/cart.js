@@ -55,7 +55,7 @@ function cartP(array) {
                     </div>
                 </div>
                 <div class="cantidad text-end">
-                    <p class="mb-0">Cantidad: <input type="number" class="cantidadInput" data-product-id="${productId}" id="numero${productId}" name="numero" value="${count}"required></p>
+                    <p class="mb-0">Cantidad: <input type="number" class="cantidadInput text-center" data-product-id="${productId}" id="numero${productId}" name="numero" value="${count}"required></p>
                 </div>
             </div>
             </div>
