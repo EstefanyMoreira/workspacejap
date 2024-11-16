@@ -361,7 +361,9 @@ option {
   border: none;
   border-radius: 10px;
   height: 2.5rem;
-  width: 40%;
+  padding-left: 1em ;
+  padding-right: 1em ;
+
   transition: background-color 0.5s ease;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   font-size: 0.9rem;
