@@ -2,6 +2,7 @@
 
 body {
   font-family: "Poppins" !important;
+  background-color: #FAF9FB;
 }
 
 .jumbotron .display-4 {
@@ -66,14 +67,6 @@ nav a {
   font-size: 38px;
 }
 
-footer {
-  padding-top: 1rem;
-  padding-bottom: 0.25rem;
-}
-
-footer p {
-  margin-bottom: 0.25rem;
-}
 
 .site-header a {
   color: white;
@@ -271,6 +264,28 @@ a.custom-card:hover {
 .navbar-collapse {
   flex-grow: 0.2;
 }
+
+/*footer*/
+footer {
+  background-color: #1c0e34;
+  padding-top: 1rem;
+  padding-bottom: 0.25rem;
+} 
+
+footer a {
+  color: #E4ECFF;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #e83b57;
+}
+
+footer p {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
 
 /*Barra de navegación para resolución menor a 1024px*/
 @media (max-width: 991px) {

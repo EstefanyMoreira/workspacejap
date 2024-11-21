@@ -11,11 +11,11 @@ function showProductList(array) {
     let product = array[i];
     htmlContentToAppend += `
          <div class="product-item row" data-product-id="` + product.id + `">
-    <div class="cont_img col-lg-6 col-md-6 col-sm-12">
+    <div class="cont_img col-lg-5 col-md-6 col-sm-12">
         <img src="` + product.image + `" alt="product image" class="imgProduct">
     </div>
     
-    <div class="bloque_madre col-lg-6 col-md-6 col-sm-12">
+    <div class="bloque_madre col-lg-7 col-md-6 col-sm-12">
       <div>
         <div class="nameButton col-12">
             <h4>` + product.name + `</h4> 
