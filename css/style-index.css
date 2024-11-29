@@ -7,17 +7,15 @@
     padding-top: 0%;
 }
 
-#carousel, .card {
+.card {
     border-radius: 30px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2) !important; 
     margin-bottom: 5%;
-    border-color: #E4ECFF;
-    border-style: solid;
-    border-width: 3px;
+    background-color: var(--color-cards);
 }
 
 h3 {
-    color: #1c0e34;
+    color: var(--color-fondo-invertidos);
     font-weight: bold;
     text-align: center;
 }
@@ -40,4 +38,8 @@ h3 {
 .btnMas {
     align-items: center;
     justify-content: center;
+}
+
+body {
+    color: var(--color-fondo-invertidos);
 }
