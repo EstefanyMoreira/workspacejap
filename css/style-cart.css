@@ -1,5 +1,4 @@
 body {
-  background-color: #faf9fb;
   width: 100%;
 }
 
@@ -12,7 +11,7 @@ main {
 .bloque-general {
   width: 85%;
   justify-content: center;
-  color: #1c0e34;
+  color: var(--color-fondo-invertidos);
 }
 
 .titulo {
@@ -31,6 +30,7 @@ main {
   border-style: solid;
   overflow: hidden;
   display: flex;
+  background-color: var(--color-cards);
 }
 
 .contImg {
@@ -105,7 +105,7 @@ select:focus {
   font-size: 110%;
   font-weight: 700;
   margin-bottom: 2%;
-  color: #1c0e34;
+  color: var(--color-fondo-invertidos);
 }
 
 /*Linea de precio*/
@@ -177,9 +177,9 @@ label {
   border-style: solid;
   overflow: hidden;
   border: none;
-  background-color: #ffffff;
+  background-color: var(--color-cards);
   height: fit-content;
-  color: #1c0e34;
+  color: var(--color-fondo-invertidos);
 }
 
 /*botones*/
@@ -203,8 +203,8 @@ label {
   background: #c13149;
 }
 .btnAzul {
-  background: #e4ecff;
-  color: #1c0e34;
+  background-color: var(--btn-celeste);
+  color: var(--color-fondo-invertidos);
   font-weight: 700;
   align-items: right;
   border: none;
@@ -217,7 +217,7 @@ label {
 }
 
 .btnAzul:hover {
-  background: #c0d0f9;
+  background-color: var(--btn-celeste-hover);
 }
 
 .contBtn {
@@ -252,14 +252,14 @@ h1 {
   display: flex;
   font-size: 1rem;
   color: rgb(92, 92, 92);
-  background-color: rgb(224, 223, 223);
+  background-color: #e0dfdf;
   font-weight: 800;
 }
 
 h2 {
   font-size: 1.2rem;
   font-weight: bolder;
-  color: #1c0e34;
+  color: var(--color-fondo-invertidos);
   font-weight: 600;
   padding-top: 10px;
   padding-bottom: 5px;
@@ -289,10 +289,12 @@ h2 {
   margin: 15% auto;
   padding: 20px;
   width: 100%;
+  background-color: var(--color-cards);
 }
 
 .modal-content label {
   font-weight: 500;
+  color: var(--color-secundario);
 }
 
 .modal-content input {
@@ -464,7 +466,7 @@ option {
     padding: 10%;
 
     border: none;
-    background-color: white;
+    background-color: #1c0e34;
   }
 
   .contBtn {

@@ -60,7 +60,7 @@ function showCategoriesList(){
                             <h4 class="mb-1">${category.name}</h4>   
                             <p class="mb-1 description">${category.description}</p> 
                         </div>
-                        <small class="text-muted d-flex justify-content-end">${category.productCount} artículos</small>
+                        <small class="d-flex justify-content-end">${category.productCount} artículos</small>
                     </div>
                 </div>
             </div>

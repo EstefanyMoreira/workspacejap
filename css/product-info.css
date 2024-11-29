@@ -1,6 +1,6 @@
 body {
     /*background: linear-gradient(to bottom, #ededed , #ffffff );*/
-    background-color: #1C0E34 !important;
+    background-color: #11091F !important;
 }
 
 
@@ -62,7 +62,7 @@ body {
    }
 
 .bloque_madre {  /*bloque contenedor de todo*/
-    background-color: var(--color-fondo);
+    background-color: var(--color-cards);
     margin-top: 0;
     padding: 5%;
     padding-bottom: 5%;  
@@ -279,7 +279,7 @@ p#precio{
         }
 
     body {
-        background-color: var(--color-fondo);
+        background-color: #faf9fb !important;
     
     }
 
@@ -530,7 +530,7 @@ p#precio{
   #seccion_comentarios, .related {
     display: flex;
     align-items: center;
-    background-color: var(--color-fondo);
+    background-color: var(--color-cards);
     padding: 3%;
     
   }
