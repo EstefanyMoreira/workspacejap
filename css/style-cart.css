@@ -30,7 +30,7 @@ main {
   border-style: solid;
   overflow: hidden;
   display: flex;
-  background-color: var(--color-cards2);
+  background-color: var(--color-cards);
 }
 
 .contImg {
@@ -177,7 +177,7 @@ label {
   border-style: solid;
   overflow: hidden;
   border: none;
-  background-color: var(--color-cards2);
+  background-color: var(--color-cards);
   height: fit-content;
   color: var(--color-fondo-invertidos);
 }

@@ -315,9 +315,8 @@ footer p {
   --radio-btn-azul: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%231c0e34'/%3e%3c/svg%3e");
   --color-fondo-celeste: #e4ecff;
   --borde: 0px;
-  --hover-cards: #ffffff;
-  --color-cards: #faf9fb;
-  --color-cards2: #ffffff;
+  --hover-cards: #faf9fb;
+  --color-cards: #ffffff;
   --btn-celeste: #e4ecff;
   --btn-celeste-hover:#c0d0f9;
 }
@@ -336,7 +335,6 @@ body.modo-noche {
   --borde: 3px;
   --hover-cards: #20113b;
   --color-cards: #1c0e34;
-  --color-cards2: #1c0e34;
   --btn-celeste: #2e77d7;
   --btn-celeste-hover: #0056b3;
 }
